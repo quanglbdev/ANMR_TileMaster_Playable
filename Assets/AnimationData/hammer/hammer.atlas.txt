@@ -1,0 +1,20 @@
+
+hammer.png
+size: 1719,341
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 1
+  rotate: true
+  xy: 2, 124
+  size: 215, 1332
+  orig: 229, 1342
+  offset: 7, 5
+  index: -1
+icon-hammer
+  rotate: true
+  xy: 1336, 2
+  size: 337, 381
+  orig: 337, 381
+  offset: 0, 0
+  index: -1

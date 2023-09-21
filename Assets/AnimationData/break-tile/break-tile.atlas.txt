@@ -1,0 +1,69 @@
+
+break-tile.png
+size: 446,127
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+broke1
+  rotate: true
+  xy: 279, 66
+  size: 59, 78
+  orig: 59, 78
+  offset: 0, 0
+  index: -1
+broke2
+  rotate: true
+  xy: 219, 2
+  size: 49, 77
+  orig: 49, 77
+  offset: 0, 0
+  index: -1
+broke3
+  rotate: true
+  xy: 136, 9
+  size: 42, 81
+  orig: 42, 81
+  offset: 0, 0
+  index: -1
+broke4
+  rotate: true
+  xy: 367, 30
+  size: 42, 77
+  orig: 42, 77
+  offset: 0, 0
+  index: -1
+broke5
+  rotate: false
+  xy: 208, 53
+  size: 69, 72
+  orig: 69, 72
+  offset: 0, 0
+  index: -1
+broke6
+  rotate: true
+  xy: 298, 8
+  size: 56, 67
+  orig: 56, 67
+  offset: 0, 0
+  index: -1
+broke7
+  rotate: true
+  xy: 359, 74
+  size: 51, 77
+  orig: 51, 77
+  offset: 0, 0
+  index: -1
+broke8
+  rotate: false
+  xy: 136, 53
+  size: 70, 72
+  orig: 70, 72
+  offset: 0, 0
+  index: -1
+tile
+  rotate: true
+  xy: 2, 9
+  size: 116, 132
+  orig: 116, 132
+  offset: 0, 0
+  index: -1

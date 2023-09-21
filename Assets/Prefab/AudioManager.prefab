@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6511193088353865968
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6511193088353865974}
+  - component: {fileID: 6511193088353865975}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6511193088353865974
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6511193088353865968}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6511193088353865975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6511193088353865968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb99833cba0e0804ebb80cd1b14a4dd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: TileDestroyed
+    type: 1
+    audioClip: {fileID: 8300000, guid: c1e418e26665985409becb790865d28d, type: 3}
+    volume: 10
+    pitch: 1
+    mute: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Click
+    type: 1
+    audioClip: {fileID: 8300000, guid: b696f3ba7e8349c43a9e764721ae4005, type: 3}
+    volume: 10
+    pitch: 1
+    mute: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Bmg
+    type: 0
+    audioClip: {fileID: 8300000, guid: 5db4db8b43192b8469c85d1080fe914d, type: 3}
+    volume: 5
+    pitch: 1
+    mute: 0
+    loop: 1
+    source: {fileID: 0}
+  - name: Voice1
+    type: 1
+    audioClip: {fileID: 8300000, guid: 2ac022fd0a5cae4418ffde904fae436a, type: 3}
+    volume: 5
+    pitch: 1
+    mute: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Voice2
+    type: 1
+    audioClip: {fileID: 8300000, guid: d198659f396f0f842b6f93b481174b2b, type: 3}
+    volume: 5
+    pitch: 1
+    mute: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Voice3
+    type: 1
+    audioClip: {fileID: 8300000, guid: 91711a03e5866ff46a2833d01d39a1a9, type: 3}
+    volume: 5
+    pitch: 1
+    mute: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Voice4
+    type: 1
+    audioClip: {fileID: 8300000, guid: d1de6aace9af0e8488ee3a7ffdc981f4, type: 3}
+    volume: 5
+    pitch: 1
+    mute: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: FloorOpen
+    type: 1
+    audioClip: {fileID: 8300000, guid: 6b56c70b3e3672645a63a08d646292c9, type: 3}
+    volume: 5
+    pitch: 1
+    mute: 0
+    loop: 0
+    source: {fileID: 0}
+  maxVolume: 10
+  curVolume: 1
+  normalPitch: 0

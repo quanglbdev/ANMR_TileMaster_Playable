@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Tile
+  - TileCheckCollision
+  - FxTemporaire
+  - Effects
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - BG
+  - Floor1
+  - Floor2
+  - Floor3
+  - Floor4
+  - Floor5
+  - TileCollision
+  - Tile
+  - UI2
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Floor1
+    uniqueID: 231848659
+    locked: 0
+  - name: Floor2
+    uniqueID: 3473421189
+    locked: 0
+  - name: Floor3
+    uniqueID: 702818905
+    locked: 0
+  - name: Floor4
+    uniqueID: 4177390253
+    locked: 0
+  - name: Floor5
+    uniqueID: 2295318425
+    locked: 0
+  - name: Floor6
+    uniqueID: 3854493787
+    locked: 0
+  - name: Floor7
+    uniqueID: 3833698867
+    locked: 0
+  - name: Floor8
+    uniqueID: 3217065205
+    locked: 0
+  - name: Floor9
+    uniqueID: 539281483
+    locked: 0
+  - name: Floor10
+    uniqueID: 4131603961
+    locked: 0
+  - name: Floor11
+    uniqueID: 333622015
+    locked: 0
+  - name: Floor12
+    uniqueID: 2310921025
+    locked: 0
+  - name: Floor13
+    uniqueID: 2312991271
+    locked: 0
+  - name: Floor14
+    uniqueID: 1705144335
+    locked: 0
+  - name: Hover
+    uniqueID: 3389429849
+    locked: 0
+  - name: Move
+    uniqueID: 3545184923
+    locked: 0
+  - name: UI
+    uniqueID: 1222364745
+    locked: 0
+  - name: TutUI
+    uniqueID: 3499603809
+    locked: 0
+  - name: Tut
+    uniqueID: 780644773
+    locked: 0
+  - name: TutHover
+    uniqueID: 283677665
+    locked: 0
+  - name: TutMove
+    uniqueID: 635605883
+    locked: 0
+  - name: TutHand
+    uniqueID: 1671917255
+    locked: 0
+  - name: Particle
+    uniqueID: 3485515351
+    locked: 0

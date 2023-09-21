@@ -1,0 +1,125 @@
+
+flower-popup.png
+size: 195,519
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+hoa1
+  rotate: true
+  xy: 2, 335
+  size: 77, 112
+  orig: 77, 112
+  offset: 0, 0
+  index: -1
+hoa2
+  rotate: true
+  xy: 2, 10
+  size: 77, 95
+  orig: 77, 95
+  offset: 0, 0
+  index: -1
+hoa3
+  rotate: true
+  xy: 102, 81
+  size: 74, 83
+  orig: 74, 83
+  offset: 0, 0
+  index: -1
+hoa4
+  rotate: false
+  xy: 124, 446
+  size: 66, 71
+  orig: 66, 71
+  offset: 0, 0
+  index: -1
+la1
+  rotate: false
+  xy: 147, 43
+  size: 43, 36
+  orig: 46, 38
+  offset: 2, 1
+  index: -1
+la10
+  rotate: false
+  xy: 2, 476
+  size: 120, 41
+  orig: 122, 43
+  offset: 1, 1
+  index: -1
+la11
+  rotate: true
+  xy: 102, 157
+  size: 50, 86
+  orig: 50, 86
+  offset: 0, 0
+  index: -1
+la12
+  rotate: false
+  xy: 2, 89
+  size: 98, 83
+  orig: 98, 83
+  offset: 0, 0
+  index: -1
+la13
+  rotate: false
+  xy: 2, 259
+  size: 99, 74
+  orig: 102, 77
+  offset: 1, 2
+  index: -1
+la2
+  rotate: false
+  xy: 99, 41
+  size: 46, 38
+  orig: 46, 38
+  offset: 0, 0
+  index: -1
+la3
+  rotate: true
+  xy: 103, 209
+  size: 50, 86
+  orig: 50, 86
+  offset: 0, 0
+  index: -1
+la4
+  rotate: false
+  xy: 2, 174
+  size: 98, 83
+  orig: 98, 83
+  offset: 0, 0
+  index: -1
+la5
+  rotate: false
+  xy: 147, 2
+  size: 39, 39
+  orig: 41, 41
+  offset: 1, 1
+  index: -1
+la6
+  rotate: false
+  xy: 147, 2
+  size: 39, 39
+  orig: 41, 41
+  offset: 1, 1
+  index: -1
+la7
+  rotate: true
+  xy: 116, 261
+  size: 102, 77
+  orig: 102, 77
+  offset: 0, 0
+  index: -1
+la8
+  rotate: false
+  xy: 2, 414
+  size: 116, 60
+  orig: 116, 60
+  offset: 0, 0
+  index: -1
+la9
+  rotate: true
+  xy: 120, 365
+  size: 79, 60
+  orig: 79, 60
+  offset: 0, 0
+  index: -1

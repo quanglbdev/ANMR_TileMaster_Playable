@@ -1,0 +1,125 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &23418609262996764
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3144019452682554004}
+  - component: {fileID: 1691015115623209572}
+  m_Layer: 0
+  m_Name: AssetManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3144019452682554004
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23418609262996764}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1691015115623209572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23418609262996764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9626bcd41581e04d9dad49dfd9cf068, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemTile: {fileID: 1792230903, guid: 12ca149c31caf814385f8e79ab031fb4, type: 3}
+  chainTile: {fileID: 2970925143426083513, guid: d22e7d5eb1c68cf48abf3184abd1c083,
+    type: 3}
+  iceTile: {fileID: 7156441717659595738, guid: 3ad2326d28e66ea48ad1840330741523, type: 3}
+  grassTile: {fileID: 3369873456593265991, guid: d2708435cf0742248a1d1cfe505b753c,
+    type: 3}
+  bombTile: {fileID: 2738750014544243358, guid: 8b2dd1061481742459454f8b59db0dbc,
+    type: 3}
+  beeTile: {fileID: 108076877109621930, guid: d16bb43947f568345b2bedc942a47664, type: 3}
+  glueTile: {fileID: 1367702477932626980, guid: cffd5d5ddcd22fc44bcc2df06d7f2b03,
+    type: 3}
+  obstacleDefinition: {fileID: 11400000, guid: 8b7d6dc347517d94485dab4ea08b66c1, type: 2}
+  mapDefinition: {fileID: 11400000, guid: 56fe137196832e1499a9e76712eba8e5, type: 2}
+  unlockNewItemData:
+  - {fileID: 11400000, guid: 77aeee11fc2381541820a21835d590f3, type: 2}
+  - {fileID: 11400000, guid: 26d575b8a3f4f2a4dba3d26b75118aba, type: 2}
+  - {fileID: 11400000, guid: 5d926cf35b0b4be43bdcb425b30033d0, type: 2}
+  - {fileID: 11400000, guid: 4901dc46dcdc49c498c063ff78943583, type: 2}
+  - {fileID: 11400000, guid: f20dec20b57b56d418b78fd53cce06fe, type: 2}
+  - {fileID: 11400000, guid: 3d8cb5df2ebd49d4e848541fc7cbdde4, type: 2}
+  - {fileID: 11400000, guid: 01e9961d95fb85447aa67bfdb69f7e60, type: 2}
+  - {fileID: 11400000, guid: 08209b7949f710e48a48429b2a8bd470, type: 2}
+  - {fileID: 11400000, guid: 0492e680a2a9b29459f3010fce1923a2, type: 2}
+  - {fileID: 11400000, guid: 8f63bc1945aadb44b96d48d520f4c0e2, type: 2}
+  - {fileID: 11400000, guid: ffb44cbea3b0d5a4396f81a7e2b28b3c, type: 2}
+  - {fileID: 11400000, guid: 79dbae9543e5f4049a8fffba4dca9296, type: 2}
+  - {fileID: 11400000, guid: 86690714fc9678249958c254d4fc752a, type: 2}
+  - {fileID: 11400000, guid: eab7a4553034cf5448317a2c6fe24bc9, type: 2}
+  tileDataDefinition: {fileID: 11400000, guid: f5a2908adc50729438f7bb89b9e9249c, type: 2}
+  winStreakDefinitions:
+  - {fileID: 11400000, guid: 937e40561051ba445aa4843a164863c7, type: 2}
+  - {fileID: 11400000, guid: f84fd993a9bdc264dbf86aa4f169a210, type: 2}
+  - {fileID: 11400000, guid: ee483ebdb5881ad43868cae359d877ec, type: 2}
+  - {fileID: 11400000, guid: 0c88ac9385ce4b44780b3d8dcdc3628c, type: 2}
+  - {fileID: 11400000, guid: 30e1a7c8f1e7ac845a531e0444506ba7, type: 2}
+  - {fileID: 11400000, guid: ed535e57b2dc63e489d8435e9210c78e, type: 2}
+  - {fileID: 11400000, guid: 879bd340facf44f45a08684b49593651, type: 2}
+  - {fileID: 11400000, guid: a66b8be350bc73340baaacdce07d0031, type: 2}
+  - {fileID: 11400000, guid: e4a47915898a6924caef383eb58a7d25, type: 2}
+  - {fileID: 11400000, guid: 18c5566d2e0560046977c3e55af433ea, type: 2}
+  - {fileID: 11400000, guid: f6e7a6a02b95bbc4ea62cb817054d504, type: 2}
+  - {fileID: 11400000, guid: 23f0427a6d229f24c84161080c706bee, type: 2}
+  - {fileID: 11400000, guid: e163f528c17ec5f448b39769ba0aa087, type: 2}
+  - {fileID: 11400000, guid: 9dbbe28f7f21e9246bf651f4b1897362, type: 2}
+  - {fileID: 11400000, guid: b512c740f43515d4b98e4f6ea00cbe85, type: 2}
+  - {fileID: 11400000, guid: fb7d3a2afbfd4c54a923102ff669eaff, type: 2}
+  - {fileID: 11400000, guid: 003dd801d7f7efa44b73a6caaff21c6e, type: 2}
+  boosterDefinitions:
+  - {fileID: 11400000, guid: 9450adeba3b85004f930cff0d2b13a34, type: 2}
+  - {fileID: 11400000, guid: 3da4a7c29390de544b297c0a37913a54, type: 2}
+  - {fileID: 11400000, guid: 5f77922f3ece3ee43b3ef59a479aed66, type: 2}
+  - {fileID: 11400000, guid: cb12aa7bf0a835943af115fa1c11144d, type: 2}
+  - {fileID: 11400000, guid: dc508c55d5783cd4cac79555c7fd7635, type: 2}
+  avatarDefinitions:
+  - {fileID: 11400000, guid: 2111ed23bf9a6584182e4dd6de628d1e, type: 2}
+  - {fileID: 11400000, guid: e21daff5c40833842a219a74f7296a09, type: 2}
+  - {fileID: 11400000, guid: cc1604b0e6ce0ca41b9c0cef14ee882b, type: 2}
+  - {fileID: 11400000, guid: 4bc990ad07520464c92e66e338d86d84, type: 2}
+  - {fileID: 11400000, guid: 0257f5691ba87424d8d665c6ca3547cc, type: 2}
+  - {fileID: 11400000, guid: af62c22528e8ee94d9fe67895999cc2d, type: 2}
+  - {fileID: 11400000, guid: 5ebec798e09bcae41b7a635159971035, type: 2}
+  - {fileID: 11400000, guid: abe46d580ec9b7b4d9b0834ca2ee039f, type: 2}
+  leaderboardDummyData_WEEK: {fileID: 11400000, guid: 3d4bae059a4c9f84bbce23149fe45cd1,
+    type: 2}
+  leaderboardDummyData_TOP: {fileID: 11400000, guid: b3a1708ec2843b246b23a33168523660,
+    type: 2}
+  tilesDefinition:
+  - {fileID: 11400000, guid: d63e87d36735b704588235bba4f22e3d, type: 2}
+  - {fileID: 11400000, guid: 2ba4b58ad649e4544aff078b2df04683, type: 2}
+  - {fileID: 11400000, guid: eb39ec598ec581243ae9e1b000625665, type: 2}
+  flower: {fileID: 4343727234628468602, guid: 4cbcdd21da9241d42b3a907cf89b2171, type: 2}
+  fruits: {fileID: 4343727234628468602, guid: 8c5b4377722cbf949b074c25d80fed05, type: 2}
+  flower2: {fileID: 4343727234628468602, guid: c3935ae65be2eb148823e77d3a4b5a80, type: 2}
+  trophy1: {fileID: 21300000, guid: 0657d934b59697742b5947908926c8fb, type: 3}
+  trophy2: {fileID: 21300000, guid: f61b2340b8d7b194a892241174720a11, type: 3}
+  trophy3: {fileID: 21300000, guid: b18700f649f37374eb306610634baa74, type: 3}
+  gift1: {fileID: 21300000, guid: f82b83ba98949a241be36e0dbf3692a1, type: 3}
+  gift2: {fileID: 21300000, guid: 7ee9ccc109406314abe8e8271faa26d5, type: 3}
+  gift3: {fileID: 21300000, guid: 32542866b9bd385409640980ea95486e, type: 3}

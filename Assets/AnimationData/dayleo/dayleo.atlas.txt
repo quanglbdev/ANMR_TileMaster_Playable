@@ -1,0 +1,76 @@
+
+dayleo.png
+size: 1217,495
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+dayleo
+  rotate: true
+  xy: 2, 4
+  size: 489, 500
+  orig: 489, 500
+  offset: 0, 0
+  index: -1
+la1
+  rotate: true
+  xy: 1059, 181
+  size: 140, 77
+  orig: 142, 79
+  offset: 1, 1
+  index: -1
+la2
+  rotate: true
+  xy: 1059, 323
+  size: 170, 87
+  orig: 172, 89
+  offset: 1, 1
+  index: -1
+la3
+  rotate: false
+  xy: 1059, 2
+  size: 108, 59
+  orig: 110, 61
+  offset: 1, 1
+  index: -1
+la4
+  rotate: false
+  xy: 1138, 229
+  size: 77, 92
+  orig: 79, 94
+  offset: 1, 1
+  index: -1
+la5
+  rotate: false
+  xy: 1129, 72
+  size: 76, 107
+  orig: 78, 109
+  offset: 1, 1
+  index: -1
+la6
+  rotate: false
+  xy: 1169, 8
+  size: 42, 62
+  orig: 44, 64
+  offset: 1, 1
+  index: -1
+la7
+  rotate: true
+  xy: 1059, 63
+  size: 116, 68
+  orig: 118, 70
+  offset: 1, 1
+  index: -1
+la8
+  rotate: false
+  xy: 1148, 405
+  size: 47, 88
+  orig: 49, 90
+  offset: 1, 1
+  index: -1
+shadow
+  rotate: false
+  xy: 504, 18
+  size: 553, 475
+  orig: 563, 500
+  offset: 10, 25
+  index: -1

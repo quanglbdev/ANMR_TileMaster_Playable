@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Fruit-atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 1
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 6d9fb53ec5e492943b9cd9eaa40bca77, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 46b96011ac1d00542bd2ae19bb704864, type: 3}
+  - {fileID: 21300000, guid: 3e85d1117bf269047b9693962a92fe1f, type: 3}
+  - {fileID: 21300000, guid: e3b74531b3980cb4598cb331e033309d, type: 3}
+  - {fileID: 21300000, guid: 3da927c1167ff5f468fd748f19e51acc, type: 3}
+  - {fileID: 21300000, guid: 02a7787329d5e9f41996b3f1154c1957, type: 3}
+  - {fileID: 21300000, guid: 4cbe38d3069de14489b82c29442b2758, type: 3}
+  - {fileID: 21300000, guid: 350fc8b5f40741f40825c34e87fea9a8, type: 3}
+  - {fileID: 21300000, guid: 88c23c07f11a6414c930b3f36dda6466, type: 3}
+  - {fileID: 21300000, guid: 2ffabd5705fd04f43b5053d10ebc7cdf, type: 3}
+  - {fileID: 21300000, guid: 02078bb7dcd6bd94da1d802a28530e1c, type: 3}
+  - {fileID: 21300000, guid: 224034f71b6adbb4694550792ab3d69a, type: 3}
+  - {fileID: 21300000, guid: a2b57668f4661ce4eaf504a2e070eeda, type: 3}
+  - {fileID: 21300000, guid: 6a2949b83c095b146943ebd332c7b3a5, type: 3}
+  - {fileID: 21300000, guid: d90acd799e47f584d9105c5970c1fe41, type: 3}
+  - {fileID: 21300000, guid: f7ea86aa4a1479646862d595805651db, type: 3}
+  - {fileID: 21300000, guid: 6015964b1a7029545aa17892d4203b16, type: 3}
+  - {fileID: 21300000, guid: f7e0515b83212104fb6609ca8fb67569, type: 3}
+  - {fileID: 21300000, guid: 8d2d562d795c9e3489b0146b18fea9d1, type: 3}
+  - {fileID: 21300000, guid: 5501a60f5f153da48b1f04fe5216c78d, type: 3}
+  - {fileID: 21300000, guid: 11c719df8f5712547854d08f9041e0fa, type: 3}
+  - {fileID: 21300000, guid: 5bb6bbdfef16cf64c8669266911499ce, type: 3}
+  - {fileID: 21300000, guid: 05fc09efdb6519c49be2b4d01867c744, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - 13
+  - tile
+  - 10
+  - 19
+  - 18
+  - tile_light
+  - 8
+  - 14
+  - 5
+  - 20
+  - 2
+  - 12
+  - 16
+  - 7
+  - 1
+  - 15
+  - 6
+  - 3
+  - 17
+  - 11
+  - 9
+  - 4
+  m_RenderDataMap: {}
+  m_Tag: Fruit-atlas
+  m_IsVariant: 0

@@ -1,0 +1,48 @@
+
+bee.png
+size: 1075,402
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Group 6
+  rotate: true
+  xy: 2, 2
+  size: 398, 357
+  orig: 398, 357
+  offset: 0, 0
+  index: -1
+Layer 619
+  rotate: false
+  xy: 709, 213
+  size: 181, 187
+  orig: 183, 189
+  offset: 1, 1
+  index: -1
+Layer 619 copy
+  rotate: false
+  xy: 709, 24
+  size: 181, 187
+  orig: 183, 189
+  offset: 1, 1
+  index: -1
+Layer 619 copy (merged)
+  rotate: true
+  xy: 361, 4
+  size: 396, 346
+  orig: 396, 359
+  offset: 0, 13
+  index: -1
+shadown1
+  rotate: false
+  xy: 892, 24
+  size: 181, 187
+  orig: 181, 187
+  offset: 0, 0
+  index: -1
+shadown2
+  rotate: false
+  xy: 892, 213
+  size: 181, 187
+  orig: 181, 187
+  offset: 0, 0
+  index: -1

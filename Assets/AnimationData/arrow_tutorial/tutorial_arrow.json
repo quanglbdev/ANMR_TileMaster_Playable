@@ -1,0 +1,48 @@
+{
+"skeleton": {
+	"hash": "dQ0SoAhcbIdX6No2X57afVh69F0",
+	"spine": "3.8.99",
+	"x": -76.79,
+	"y": 0.51,
+	"width": 149.5,
+	"height": 172,
+	"images": "C:/Users/HACOM/Downloads/arrow_tutorial/images",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" },
+	{ "name": "bone", "parent": "root", "x": -0.08, "y": -25.97, "scaleX": 0.5, "scaleY": 0.5 },
+	{ "name": "arrow", "parent": "bone", "length": 303.63, "rotation": 89.66, "x": 0.39, "y": 74.74 }
+],
+"slots": [
+	{ "name": "arrow", "bone": "arrow", "attachment": "arrow" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"arrow": {
+				"arrow": { "x": 150.2, "y": 5.19, "rotation": -89.66, "width": 299, "height": 344 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {
+		"bones": {
+			"bone": {
+				"translate": [
+					{ "y": 50.18, "curve": 0.25, "c3": 0.75 },
+					{ "time": 0.3333, "y": 3.04, "curve": 0.25, "c3": 0.75 },
+					{ "time": 0.6667, "y": 50.18 }
+				],
+				"scale": [
+					{ "curve": 0.25, "c3": 0.75 },
+					{ "time": 0.3333, "x": 1.1, "y": 0.9, "curve": 0.25, "c3": 0.75 },
+					{ "time": 0.6667 }
+				]
+			}
+		}
+	}
+}
+}

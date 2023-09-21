@@ -1,0 +1,48 @@
+
+Honey.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+honey-drop01
+  rotate: false
+  xy: 394, 721
+  size: 57, 49
+  orig: 57, 49
+  offset: 0, 0
+  index: -1
+honey-drop02
+  rotate: false
+  xy: 493, 701
+  size: 40, 35
+  orig: 40, 36
+  offset: 0, 0
+  index: -1
+honey-drop03
+  rotate: false
+  xy: 493, 738
+  size: 51, 32
+  orig: 51, 32
+  offset: 0, 0
+  index: -1
+honey-drop04
+  rotate: false
+  xy: 453, 733
+  size: 38, 37
+  orig: 38, 38
+  offset: 0, 0
+  index: -1
+honey01
+  rotate: true
+  xy: 2, 2
+  size: 243, 517
+  orig: 245, 517
+  offset: 2, 0
+  index: -1
+honey02
+  rotate: false
+  xy: 2, 247
+  size: 390, 523
+  orig: 390, 523
+  offset: 0, 0
+  index: -1

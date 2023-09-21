@@ -1,0 +1,27 @@
+
+items-clock.png
+size: 486,374
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 44
+  rotate: true
+  xy: 2, 2
+  size: 370, 372
+  orig: 370, 373
+  offset: 0, 0
+  index: -1
+kim
+  rotate: false
+  xy: 376, 116
+  size: 49, 109
+  orig: 51, 111
+  offset: 1, 1
+  index: -1
+nut bam
+  rotate: true
+  xy: 376, 227
+  size: 145, 108
+  orig: 145, 108
+  offset: 0, 0
+  index: -1

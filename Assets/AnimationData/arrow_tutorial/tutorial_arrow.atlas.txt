@@ -1,0 +1,13 @@
+
+tutorial_arrow.png
+size: 154,176
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arrow
+  rotate: false
+  xy: 2, 2
+  size: 150, 172
+  orig: 150, 172
+  offset: 0, 0
+  index: -1

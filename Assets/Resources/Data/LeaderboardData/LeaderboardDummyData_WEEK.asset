@@ -1,0 +1,419 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f7000036fbceda4c9baa69ae93d7fa8, type: 3}
+  m_Name: LeaderboardDummyData_WEEK
+  m_EditorClassIdentifier: 
+  leaderboardDefinitions:
+  - id: 1
+    playerName: Poju
+    score: 6
+    avatarId: 1
+  - id: 2
+    playerName: Doce
+    score: 82
+    avatarId: 1
+  - id: 3
+    playerName: Dufevu
+    score: 57
+    avatarId: 1
+  - id: 4
+    playerName: Nulu
+    score: 43
+    avatarId: 6
+  - id: 5
+    playerName: Tigi
+    score: 96
+    avatarId: 4
+  - id: 6
+    playerName: Pipa
+    score: 74
+    avatarId: 2
+  - id: 7
+    playerName: ZHala
+    score: 78
+    avatarId: 2
+  - id: 8
+    playerName: Gita
+    score: 7
+    avatarId: 1
+  - id: 9
+    playerName: Quje
+    score: 98
+    avatarId: 4
+  - id: 10
+    playerName: ZHiso
+    score: 66
+    avatarId: 5
+  - id: 11
+    playerName: Viwyno
+    score: 16
+    avatarId: 2
+  - id: 12
+    playerName: Pohi
+    score: 56
+    avatarId: 4
+  - id: 13
+    playerName: Madeshy
+    score: 55
+    avatarId: 3
+  - id: 14
+    playerName: Jepe
+    score: 15
+    avatarId: 1
+  - id: 15
+    playerName: ZHubety
+    score: 32
+    avatarId: 2
+  - id: 16
+    playerName: Pany
+    score: 89
+    avatarId: 2
+  - id: 17
+    playerName: Fodi
+    score: 30
+    avatarId: 5
+  - id: 18
+    playerName: Lehy
+    score: 85
+    avatarId: 5
+  - id: 19
+    playerName: Ticy
+    score: 29
+    avatarId: 3
+  - id: 20
+    playerName: Pishoma
+    score: 8
+    avatarId: 5
+  - id: 21
+    playerName: Xiqy
+    score: 29
+    avatarId: 6
+  - id: 22
+    playerName: Ximyku
+    score: 76
+    avatarId: 2
+  - id: 23
+    playerName: Mylivu
+    score: 32
+    avatarId: 7
+  - id: 24
+    playerName: Muku
+    score: 20
+    avatarId: 3
+  - id: 25
+    playerName: Gyjyki
+    score: 34
+    avatarId: 3
+  - id: 26
+    playerName: Jely
+    score: 70
+    avatarId: 7
+  - id: 27
+    playerName: Namixe
+    score: 72
+    avatarId: 4
+  - id: 28
+    playerName: Lebo
+    score: 58
+    avatarId: 7
+  - id: 29
+    playerName: Lizhashi
+    score: 51
+    avatarId: 1
+  - id: 30
+    playerName: Wila
+    score: 68
+    avatarId: 3
+  - id: 31
+    playerName: Byshi
+    score: 20
+    avatarId: 7
+  - id: 32
+    playerName: Kusa
+    score: 73
+    avatarId: 3
+  - id: 33
+    playerName: SHino
+    score: 49
+    avatarId: 2
+  - id: 34
+    playerName: Loha
+    score: 19
+    avatarId: 7
+  - id: 35
+    playerName: Muwagi
+    score: 58
+    avatarId: 5
+  - id: 36
+    playerName: Xewe
+    score: 83
+    avatarId: 6
+  - id: 37
+    playerName: Puve
+    score: 16
+    avatarId: 6
+  - id: 38
+    playerName: Loweqy
+    score: 8
+    avatarId: 5
+  - id: 39
+    playerName: Sita
+    score: 23
+    avatarId: 6
+  - id: 40
+    playerName: Woro
+    score: 70
+    avatarId: 6
+  - id: 41
+    playerName: Fugo
+    score: 24
+    avatarId: 7
+  - id: 42
+    playerName: Xikyla
+    score: 43
+    avatarId: 6
+  - id: 43
+    playerName: Tufe
+    score: 30
+    avatarId: 3
+  - id: 44
+    playerName: ZHela
+    score: 6
+    avatarId: 7
+  - id: 45
+    playerName: Cybo
+    score: 34
+    avatarId: 7
+  - id: 46
+    playerName: Xififo
+    score: 55
+    avatarId: 7
+  - id: 47
+    playerName: Nesu
+    score: 61
+    avatarId: 7
+  - id: 48
+    playerName: Suzhe
+    score: 93
+    avatarId: 1
+  - id: 49
+    playerName: Qiru
+    score: 11
+    avatarId: 4
+  - id: 50
+    playerName: Dury
+    score: 15
+    avatarId: 6
+  - id: 51
+    playerName: Jene
+    score: 72
+    avatarId: 4
+  - id: 52
+    playerName: Rije
+    score: 29
+    avatarId: 7
+  - id: 53
+    playerName: Nesheci
+    score: 30
+    avatarId: 6
+  - id: 54
+    playerName: Ryro
+    score: 25
+    avatarId: 6
+  - id: 55
+    playerName: Figa
+    score: 23
+    avatarId: 5
+  - id: 56
+    playerName: Jyri
+    score: 94
+    avatarId: 2
+  - id: 57
+    playerName: Lilila
+    score: 59
+    avatarId: 3
+  - id: 58
+    playerName: Mypa
+    score: 11
+    avatarId: 1
+  - id: 59
+    playerName: Buwi
+    score: 59
+    avatarId: 6
+  - id: 60
+    playerName: Hylawa
+    score: 82
+    avatarId: 5
+  - id: 61
+    playerName: SHewe
+    score: 59
+    avatarId: 5
+  - id: 62
+    playerName: Fohane
+    score: 60
+    avatarId: 2
+  - id: 63
+    playerName: Pyzhone
+    score: 31
+    avatarId: 2
+  - id: 64
+    playerName: Lesu
+    score: 23
+    avatarId: 4
+  - id: 65
+    playerName: Leshu
+    score: 40
+    avatarId: 2
+  - id: 66
+    playerName: Hibito
+    score: 70
+    avatarId: 1
+  - id: 67
+    playerName: Nyliju
+    score: 22
+    avatarId: 2
+  - id: 68
+    playerName: Requshe
+    score: 16
+    avatarId: 4
+  - id: 69
+    playerName: Qemu
+    score: 99
+    avatarId: 7
+  - id: 70
+    playerName: Peto
+    score: 36
+    avatarId: 7
+  - id: 71
+    playerName: Same
+    score: 21
+    avatarId: 4
+  - id: 72
+    playerName: Nuxozhu
+    score: 94
+    avatarId: 2
+  - id: 73
+    playerName: Nogo
+    score: 37
+    avatarId: 3
+  - id: 74
+    playerName: Qugu
+    score: 28
+    avatarId: 4
+  - id: 75
+    playerName: Dikulo
+    score: 20
+    avatarId: 3
+  - id: 76
+    playerName: Subohu
+    score: 86
+    avatarId: 5
+  - id: 77
+    playerName: Vobe
+    score: 82
+    avatarId: 3
+  - id: 78
+    playerName: Losha
+    score: 80
+    avatarId: 4
+  - id: 79
+    playerName: Codu
+    score: 44
+    avatarId: 4
+  - id: 80
+    playerName: Xevy
+    score: 81
+    avatarId: 4
+  - id: 81
+    playerName: Nypu
+    score: 49
+    avatarId: 5
+  - id: 82
+    playerName: Pelu
+    score: 98
+    avatarId: 6
+  - id: 83
+    playerName: Lodi
+    score: 17
+    avatarId: 3
+  - id: 84
+    playerName: Xiwuhu
+    score: 83
+    avatarId: 3
+  - id: 85
+    playerName: Kyqi
+    score: 18
+    avatarId: 3
+  - id: 86
+    playerName: Dehu
+    score: 30
+    avatarId: 1
+  - id: 87
+    playerName: Pese
+    score: 48
+    avatarId: 4
+  - id: 88
+    playerName: Tiro
+    score: 11
+    avatarId: 6
+  - id: 89
+    playerName: Bazho
+    score: 10
+    avatarId: 4
+  - id: 90
+    playerName: Toce
+    score: 89
+    avatarId: 5
+  - id: 91
+    playerName: Johi
+    score: 80
+    avatarId: 4
+  - id: 92
+    playerName: Vudu
+    score: 37
+    avatarId: 6
+  - id: 93
+    playerName: Cushi
+    score: 27
+    avatarId: 1
+  - id: 94
+    playerName: Fedoxo
+    score: 97
+    avatarId: 3
+  - id: 95
+    playerName: Venygi
+    score: 98
+    avatarId: 6
+  - id: 96
+    playerName: SHyshy
+    score: 47
+    avatarId: 6
+  - id: 97
+    playerName: Dijy
+    score: 45
+    avatarId: 5
+  - id: 98
+    playerName: Fegeto
+    score: 72
+    avatarId: 4
+  - id: 99
+    playerName: Bulu
+    score: 87
+    avatarId: 5
+  - id: 100
+    playerName: Neshuka
+    score: 90
+    avatarId: 1
+  - id: 0
+    playerName: Tefaho
+    score: 0
+    avatarId: 1

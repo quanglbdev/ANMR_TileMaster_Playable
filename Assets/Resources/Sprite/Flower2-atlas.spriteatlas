@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Flower2-atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 1
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: b9518b9960f03224c856b874737797c6, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 07135b701308ba4418a8ee12c352f447, type: 3}
+  - {fileID: 21300000, guid: 45d7f59009ec46649a67f38ce454b5df, type: 3}
+  - {fileID: 21300000, guid: ec2e51c07f2c1ce429160dc669f84e12, type: 3}
+  - {fileID: 21300000, guid: 0c440d61302f2954b9cc8614355a0502, type: 3}
+  - {fileID: 21300000, guid: 0f3299a25db160a48976fc3c66c60b3d, type: 3}
+  - {fileID: 21300000, guid: df227ab2931d2de48b4b21260af7865c, type: 3}
+  - {fileID: 21300000, guid: 259e88d23642c5040bfde69514f20025, type: 3}
+  - {fileID: 21300000, guid: c785f114ac0a21442b07701444192343, type: 3}
+  - {fileID: 21300000, guid: 4fbb4184764281d4daab4d9687b78336, type: 3}
+  - {fileID: 21300000, guid: 5aed77f44d0f55c4cb04e9e26469a9f5, type: 3}
+  - {fileID: 21300000, guid: b19b74f59bd1f8349bcc6f19ad4e1e95, type: 3}
+  - {fileID: 21300000, guid: 13b1ba167a6c6f54eb3ba357535d220b, type: 3}
+  - {fileID: 21300000, guid: 7df14936c201605499f22ab5985699f3, type: 3}
+  - {fileID: 21300000, guid: 5f1939496aaa42f44b4f584f875309c5, type: 3}
+  - {fileID: 21300000, guid: dc50eb5adfd0d0a42ae76053c8634635, type: 3}
+  - {fileID: 21300000, guid: 275faa8abb69a91408d1b35d5649714f, type: 3}
+  - {fileID: 21300000, guid: 564a9f8a5ed835e4ea34814f58e92d00, type: 3}
+  - {fileID: 21300000, guid: 2180f8ab981a52c498ffe5ff9315fffe, type: 3}
+  - {fileID: 21300000, guid: 7e6f40fb310735d4f8e5ca779252f050, type: 3}
+  - {fileID: 21300000, guid: 7f2cb41cc8fe55c4cab08394de5b1eb7, type: 3}
+  - {fileID: 21300000, guid: 3734cccec15d6a74990222b756e6ae6e, type: 3}
+  - {fileID: 21300000, guid: 7153bcfe331cc9445999a1d62dbbfcd7, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - 19
+  - 4
+  - 8
+  - 15
+  - 3
+  - tile_light
+  - 6
+  - 1
+  - 2
+  - 7
+  - 17
+  - 9
+  - 5
+  - 14
+  - 10
+  - tile
+  - 20
+  - 16
+  - 11
+  - 18
+  - 12
+  - 13
+  m_RenderDataMap: {}
+  m_Tag: Flower2-atlas
+  m_IsVariant: 0

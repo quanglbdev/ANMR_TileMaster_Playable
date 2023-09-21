@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a883d325-f4a5-443b-9538-16cccb4c0b0f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Editor/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Firebase/m2repository/com/google/firebase/firebase-analytics-unity/8.0.0/firebase-analytics-unity-8.0.0.pom" beforeDir="false" afterPath="$PROJECT_DIR$/Firebase/m2repository/com/google/firebase/firebase-analytics-unity/8.0.0/firebase-analytics-unity-8.0.0.pom" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Firebase/m2repository/com/google/firebase/firebase-app-unity/8.0.0/firebase-app-unity-8.0.0.pom" beforeDir="false" afterPath="$PROJECT_DIR$/Firebase/m2repository/com/google/firebase/firebase-app-unity/8.0.0/firebase-app-unity-8.0.0.pom" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Firebase/m2repository/com/google/firebase/firebase-crashlytics-unity/8.0.0/firebase-crashlytics-unity-8.0.0.pom" beforeDir="false" afterPath="$PROJECT_DIR$/Firebase/m2repository/com/google/firebase/firebase-crashlytics-unity/8.0.0/firebase-crashlytics-unity-8.0.0.pom" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Firebase/m2repository/com/google/firebase/firebase-messaging-unity/8.0.0/firebase-messaging-unity-8.0.0.pom" beforeDir="false" afterPath="$PROJECT_DIR$/Firebase/m2repository/com/google/firebase/firebase-messaging-unity/8.0.0/firebase-messaging-unity-8.0.0.pom" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/AndroidBuildPostProcessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/AndroidBuildPostProcessor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/GoogleMobileAds.Editor.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/GoogleMobileAds.Editor.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/GoogleMobileAds.Editor.asmdef.meta" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/GoogleMobileAds.Editor.asmdef.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/GoogleMobileAdsDependencies.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/GoogleMobileAdsDependencies.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/GoogleMobileAdsDependencies.xml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/GoogleMobileAdsDependencies.xml.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/GoogleMobileAdsSKAdNetworkItems.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/GoogleMobileAdsSKAdNetworkItems.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/GoogleMobileAdsSKAdNetworkItems.xml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/GoogleMobileAdsSKAdNetworkItems.xml.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/GoogleMobileAdsSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/GoogleMobileAdsSettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/GoogleMobileAdsSettings.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/GoogleMobileAdsSettings.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/GoogleMobileAdsSettingsEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/GoogleMobileAdsSettingsEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/GoogleMobileAdsSettingsEditor.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/GoogleMobileAdsSettingsEditor.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/ManifestProcessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/ManifestProcessor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/ManifestProcessor.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/ManifestProcessor.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/PListProcessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/PListProcessor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/PListProcessor.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/PListProcessor.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/AdImages/1024x768.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/AdImages/1024x768.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/AdImages/300x250.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/AdImages/300x250.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/AdImages/320x100.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/AdImages/320x100.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/AdImages/320x480.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/AdImages/320x480.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/AdImages/320x50.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/AdImages/320x50.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/AdImages/468x60.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/AdImages/468x60.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/AdImages/480x320.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/AdImages/480x320.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/AdImages/728x90.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/AdImages/728x90.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/AdImages/768x1024.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/AdImages/768x1024.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Banners/ADAPTIVE.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Banners/ADAPTIVE.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Banners/ADAPTIVE.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Banners/ADAPTIVE.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Banners/BANNER.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Banners/BANNER.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Banners/BANNER.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Banners/BANNER.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Banners/CENTER.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Banners/CENTER.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Banners/CENTER.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Banners/CENTER.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Banners/FULL_BANNER.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Banners/FULL_BANNER.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Banners/FULL_BANNER.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Banners/FULL_BANNER.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Banners/LARGE_BANNER.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Banners/LARGE_BANNER.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Banners/LARGE_BANNER.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Banners/LARGE_BANNER.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Banners/LEADERBOARD.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Banners/LEADERBOARD.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Banners/LEADERBOARD.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Banners/LEADERBOARD.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Banners/MEDIUM_RECTANGLE.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Banners/MEDIUM_RECTANGLE.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Banners/MEDIUM_RECTANGLE.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Banners/MEDIUM_RECTANGLE.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Banners/SMART_BANNER.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Banners/SMART_BANNER.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Banners/SMART_BANNER.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Banners/SMART_BANNER.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Interstitials/1024x768.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Interstitials/1024x768.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Interstitials/1024x768.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Interstitials/1024x768.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Interstitials/768x1024.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Interstitials/768x1024.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Interstitials/768x1024.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Interstitials/768x1024.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Rewarded/1024x768.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Rewarded/1024x768.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Rewarded/1024x768.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Rewarded/1024x768.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Rewarded/768x1024.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Rewarded/768x1024.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Rewarded/768x1024.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Editor/Resources/DummyAds/Rewarded/768x1024.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Platforms/Android/Mediation/AppLovin.meta" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Platforms/Android/Mediation/AppLovin.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleMobileAds/Platforms/iOS/Mediation/AppLovin.meta" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleMobileAds/Platforms/iOS/Mediation/AppLovin.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/Android/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/Android/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/Android/AndroidManifest.xml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/Android/AndroidManifest.xml.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/Android/FirebaseCrashlytics.androidlib/res/values/crashlytics_build_id.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/Android/FirebaseCrashlytics.androidlib/res/values/crashlytics_build_id.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/Android/GoogleMobileAdsAppLovinMediation/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/Android/GoogleMobileAdsAppLovinMediation/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/Android/GoogleMobileAdsAppLovinMediation/AndroidManifest.xml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/Android/GoogleMobileAdsAppLovinMediation/AndroidManifest.xml.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/Android/GoogleMobileAdsAppLovinMediation/project.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/Android/GoogleMobileAdsAppLovinMediation/project.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/Android/GoogleMobileAdsAppLovinMediation/project.properties.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/Android/GoogleMobileAdsAppLovinMediation/project.properties.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/Android/GoogleMobileAdsPlugin.androidlib/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/Android/GoogleMobileAdsPlugin.androidlib/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/Android/GoogleMobileAdsPlugin.androidlib/AndroidManifest.xml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/Android/GoogleMobileAdsPlugin.androidlib/AndroidManifest.xml.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/Android/GoogleMobileAdsPlugin.androidlib/project.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/Android/GoogleMobileAdsPlugin.androidlib/project.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/Android/GoogleMobileAdsPlugin.androidlib/project.properties.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/Android/GoogleMobileAdsPlugin.androidlib/project.properties.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/Android/googlemobileads-unity.aar" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/Android/googlemobileads-unity.aar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/Android/googlemobileads-unity.aar.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/Android/googlemobileads-unity.aar.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/iOS/GADUMAppLovinInterface.m" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/iOS/GADUMAppLovinInterface.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/iOS/GADUMAppLovinInterface.m.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/iOS/GADUMAppLovinInterface.m.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/iOS/unity-plugin-library.a" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/iOS/unity-plugin-library.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/iOS/unity-plugin-library.a.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/iOS/unity-plugin-library.a.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scenes/PreLoadScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Scenes/PreLoadScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../ProjectSettings/ProjectSettings.asset" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Scripts/AdmobManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GoogleMobileAds/Editor/AndroidBuildPostProcessor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Scripts/PreLoadScenManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AdmobController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Scripts/TenjinController.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/GoogleMobileAds/Editor/AndroidBuildPostProcessor.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1zXFjLBfiKCUoVaDifkC9S5XOHw" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
+    <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a883d325-f4a5-443b-9538-16cccb4c0b0f" name="Default Changelist" comment="" />
+      <created>1634286659951</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1634286659951</updated>
+      <workItem from="1634286662856" duration="1075000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" suspend="NONE" type="DotNet Exception Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

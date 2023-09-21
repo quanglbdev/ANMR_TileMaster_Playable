@@ -1,0 +1,20 @@
+
+hand-tut.png
+size: 1084,918
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+fx
+  rotate: false
+  xy: 2, 2
+  size: 914, 914
+  orig: 924, 924
+  offset: 5, 5
+  index: -1
+hand
+  rotate: false
+  xy: 918, 718
+  size: 164, 198
+  orig: 164, 198
+  offset: 0, 0
+  index: -1

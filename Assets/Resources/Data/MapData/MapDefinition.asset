@@ -1,0 +1,152 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 741847e4ecd04aa4a9e0e564b90aa488, type: 3}
+  m_Name: MapDefinition
+  m_EditorClassIdentifier: 
+  maps:
+  - mapId: 0
+    mapName: 
+    background: {fileID: 21300000, guid: 003aa21739d697642ae435d71ad3b879, type: 3}
+    elements: []
+    rewards: []
+  - mapId: 1
+    mapName: Flower Farm
+    background: {fileID: 21300000, guid: 948049710a8f64547b3831623a1acc06, type: 3}
+    elements:
+    - buildingType: 1
+      price: 010000000200000003000000
+    - buildingType: 2
+      price: 010000000200000003000000
+    - buildingType: 3
+      price: 010000000200000003000000
+    - buildingType: 4
+      price: 010000000200000003000000
+    - buildingType: 5
+      price: 010000000200000003000000
+    rewards:
+    - shopItemType: 1
+      countItem: 1
+      price: 0
+    - shopItemType: 3
+      countItem: 1
+      price: 0
+  - mapId: 2
+    mapName: Spring Farm
+    background: {fileID: 21300000, guid: b17309b6f2115134e9e7debdc0f7b303, type: 3}
+    elements:
+    - buildingType: 1
+      price: 010000000200000003000000
+    - buildingType: 2
+      price: 010000000200000003000000
+    - buildingType: 3
+      price: 010000000200000003000000
+    - buildingType: 4
+      price: 010000000200000003000000
+    - buildingType: 5
+      price: 010000000200000003000000
+    rewards:
+    - shopItemType: 1
+      countItem: 1
+      price: 0
+    - shopItemType: 3
+      countItem: 1
+      price: 0
+    - shopItemType: 4
+      countItem: 1
+      price: 0
+  - mapId: 3
+    mapName: Happy Camp
+    background: {fileID: 21300000, guid: bf7dbd648d575de43b52f7842aa63594, type: 3}
+    elements:
+    - buildingType: 1
+      price: 010000000200000003000000
+    - buildingType: 2
+      price: 010000000200000003000000
+    - buildingType: 3
+      price: 010000000200000003000000
+    - buildingType: 4
+      price: 010000000200000003000000
+    - buildingType: 5
+      price: 010000000200000003000000
+    rewards:
+    - shopItemType: 1
+      countItem: 1
+      price: 1
+    - shopItemType: 3
+      countItem: 1
+      price: 0
+    - shopItemType: 4
+      countItem: 1
+      price: 0
+    - shopItemType: 2
+      countItem: 1
+      price: 0
+  - mapId: 4
+    mapName: Spring Farm 2
+    background: {fileID: 21300000, guid: b17309b6f2115134e9e7debdc0f7b303, type: 3}
+    elements:
+    - buildingType: 1
+      price: 010000000200000003000000
+    - buildingType: 2
+      price: 010000000200000003000000
+    - buildingType: 3
+      price: 010000000200000003000000
+    - buildingType: 4
+      price: 010000000200000003000000
+    - buildingType: 5
+      price: 010000000200000003000000
+    rewards:
+    - shopItemType: 1
+      countItem: 2
+      price: 0
+    - shopItemType: 3
+      countItem: 2
+      price: 0
+    - shopItemType: 4
+      countItem: 1
+      price: 0
+    - shopItemType: 2
+      countItem: 1
+      price: 0
+    - shopItemType: 0
+      countItem: 300
+      price: 0
+  - mapId: 5
+    mapName: Hang Day Statium
+    background: {fileID: 21300000, guid: 003aa21739d697642ae435d71ad3b879, type: 3}
+    elements:
+    - buildingType: 1
+      price: 010000000200000003000000
+    - buildingType: 2
+      price: 010000000200000003000000
+    - buildingType: 3
+      price: 010000000200000003000000
+    - buildingType: 4
+      price: 010000000200000003000000
+    - buildingType: 5
+      price: 010000000200000003000000
+    rewards:
+    - shopItemType: 1
+      countItem: 2
+      price: 0
+    - shopItemType: 3
+      countItem: 2
+      price: 0
+    - shopItemType: 4
+      countItem: 2
+      price: 0
+    - shopItemType: 2
+      countItem: 2
+      price: 0
+    - shopItemType: 0
+      countItem: 500
+      price: 0
