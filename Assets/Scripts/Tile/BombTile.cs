@@ -54,7 +54,7 @@ public class BombTile : ItemTile
         bg.sprite = AssetManager.Instance.GetTile("tile");
         shadow.sprite = AssetManager.Instance.GetTile("tile");
         border.sprite = AssetManager.Instance.GetTile("tile-light");
-        
+
         gameObject.transform.localPosition =
             new Vector3(TILE_SIZE_X * posTile.x, TILE_SIZE_Y * posTile.y, 50 - floorIndex * 5);
 
@@ -147,23 +147,6 @@ public class BombTile : ItemTile
         {
             if (ItemTileState == Config.ITEMTILE_STATE.FLOOR)
             {
-                if (Config.CheckTutorial_Match3() && !IsTileTutorial) return;
-                if (IsTileTutorial) GameLevelManager.Instance.SetNextTutClickTile(this);
-                
-                if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.GLUE) && !IsTileTutorial) return;
-                if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.CHAIN) && !IsTileTutorial) return;
-                if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.ICE) && !IsTileTutorial) return;
-                if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.GRASS) && !IsTileTutorial) return;
-                if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.CLOCK) && !IsTileTutorial) return;
-                if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.BOMB) && !IsTileTutorial) return;
-                if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.BEE) && !IsTileTutorial) return;
-                
-                if (IsTileTutorial) GameLevelManager.Instance.SetNextTutClickTile(this);
-
-                if (Config.CheckTutorial_Undo() && Config.IsShowTutUndo) return;
-                if (Config.CheckTutorial_Suggest() && Config.isShowTut_suggest) return;
-                if (Config.CheckTutorial_Shuffle() && Config.IsShowTutShuffle) return;
-
                 if (CannotTouch()) return;
 
                 if (!GameLevelManager.Instance.IsItemTileMoveToSlot())
@@ -171,12 +154,6 @@ public class BombTile : ItemTile
                     return;
                 }
 
-
-                //AudioManager.instance.Play("Click");
-                //Destroy(gameObject);
-
-
-                GamePlayManager.Instance.HideTut_HandGuide();
                 SoundManager.Instance.PlaySound_BlockClick();
                 itemTileCheckCollision.gameObject.SetActive(false);
 
@@ -250,18 +227,18 @@ public class BombTile : ItemTile
         breakTileSkeleton.GetComponent<MeshRenderer>().sortingLayerName = "Move";
         bg.gameObject.SetActive(false);
         icon.transform.DOScale(0f, 0.3f);
-        
+
         breakTileSkeleton.AnimationState.SetAnimation(0, tileBreak, false);
-       
+
         yield return new WaitForSeconds(0.5f);
         GameLevelManager.Instance.SetGameOver();
     }
-    
+
     public override void SetItemTileTut()
     {
         IsTileTutorial = true;
         const string sortingLayerName = "TutHand";
-        
+
         bomb.GetComponent<MeshRenderer>().sortingLayerName = sortingLayerName;
         bg.sortingLayerName = sortingLayerName;
         icon.sortingLayerName = sortingLayerName;

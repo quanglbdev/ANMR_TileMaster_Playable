@@ -28,27 +28,17 @@ public class TimeUpPopup : MonoBehaviour
 
     private void TouchRevive()
     {
-        if (Config.GetCoin() < Config.coinRiviveRequired)
-        {
-            GamePlayManager.Instance.OpenShopPopup();
-            return;
-        }
-
         lockGroup.gameObject.SetActive(true);
         Config.SetHeart(Config.currHeart + 1);
         Config.SetCoin(Config.currCoin - Config.coinRiviveRequired);
-        FirebaseManager.Instance.LogSpendVirtualCoin(Config.coinRiviveRequired, "revive_time_up");
         Revive_Finished();
     }
 
     private void TouchAdsRevive()
     {
-        AdsManager.Instance.ShowRewardAd_CallBack(FirebaseManager.RewardFor.ReviveTimeUp, state =>
-        {
-            lockGroup.gameObject.SetActive(false);
-            //WatchAds
-            ReviveSuccess();
-        });
+        lockGroup.gameObject.SetActive(false);
+        //WatchAds
+        ReviveSuccess();
     }
 
     private void ReviveSuccess()
@@ -76,11 +66,6 @@ public class TimeUpPopup : MonoBehaviour
 
     public void ShowTimeUpPopup(int level)
     {
-        if (level > 2)
-        {
-            Config.interstitialAd_countLose++;
-        }
-
         _timeAdd = GameLevelManager.Instance.secondsRequired / 3;
         timeAddCoinTxt.text = $"+{_timeAdd}s";
         timeAddAdsTxt.text = $"+{_timeAdd}s";

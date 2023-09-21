@@ -57,10 +57,6 @@ public class StarGroup : MonoBehaviour
     private void Update()
     {
         if (Config.gameState != Config.GAME_STATE.PLAYING) return;
-        if (Config.CheckTutorial_Match3()) return;
-        if (Config.CheckTutorial_Undo()) return;
-        if (Config.CheckTutorial_Suggest()) return;
-        if (Config.CheckTutorial_Shuffle()) return;
 
         if (!_isCounting || CurrentCombo <= 1) return;
         _timer += Time.deltaTime;

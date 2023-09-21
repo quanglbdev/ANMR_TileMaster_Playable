@@ -17,11 +17,4 @@ public class ConfigItemShopData
         this.countItem = countItem;
         price = 0;
     }
-
-    public ConfigItemShopData(Reward reward)
-    {
-        shopItemType = reward.shopItemType;
-        countItem = reward.countItem;
-        price = 0;
-    }
 }

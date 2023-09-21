@@ -11,7 +11,7 @@ public static class UIExtensions {
     /// <param name="source">The rect to transform</param>
     /// <param name="target">The target space to transform to</param>
     /// <returns>The transformed bounds</returns>
-    public static Bounds TransformBoundsTo(this RectTransform source, Transform target)
+    private static Bounds TransformBoundsTo(this RectTransform source, Transform target)
     {
         // Based on code in ScrollRect's internal GetBounds and InternalGetBounds methods
         var bounds = new Bounds();
@@ -40,7 +40,7 @@ public static class UIExtensions {
     /// <param name="axis">Scroll axis, 0 = horizontal, 1 = vertical</param>
     /// <param name="distance">The distance in the scroll rect's view's coordiante space</param>
     /// <returns>The normalized scoll distance</returns>
-    public static float NormalizeScrollDistance(this ScrollRect scrollRect, int axis, float distance)
+    private static float NormalizeScrollDistance(this ScrollRect scrollRect, int axis, float distance)
     {
         // Based on code in ScrollRect's internal SetNormalizedPosition method
         var viewport = scrollRect.viewport;

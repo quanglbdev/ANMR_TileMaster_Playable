@@ -81,7 +81,6 @@ public class SettingsPopup : MonoBehaviour
 
     public void OpenSettingInGamePopup()
     {
-        Config.interstitialAd_countPause++;
         gameObject.SetActive(true);
         InitViews();
     }
@@ -167,15 +166,8 @@ public class SettingsPopup : MonoBehaviour
     {
         stateClosePopup = STATE_CLOSEPOPUP.HOME;
         lockGroup.gameObject.SetActive(true);
-        if (Config.currLevel >= Config.interstitialAd_levelShowAd)
-        {
-            AdsManager.Instance.ShowInterstitialAd();
-            popup.GetComponent<BBUIView>().HideView();
-        }
-        else
-        {
-            popup.GetComponent<BBUIView>().HideView();
-        }
+
+        popup.GetComponent<BBUIView>().HideView();
     }
 
     private void PopupHideView_Finished()
@@ -191,14 +183,7 @@ public class SettingsPopup : MonoBehaviour
             case STATE_CLOSEPOPUP.HOME:
                 GamePlayManager.Instance.HideView();
                 break;
-            case STATE_CLOSEPOPUP.RATE:
-                GameDisplay.Instance.OpenRatePopup();
-                break;
             case STATE_CLOSEPOPUP.ABOUT:
-                GameDisplay.Instance.OpenAboutPopup();
-                break;
-            case STATE_CLOSEPOPUP.FEEDBACK:
-                GameDisplay.Instance.OpenFeedBackPopup();
                 break;
         }
 

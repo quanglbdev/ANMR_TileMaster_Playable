@@ -26,27 +26,17 @@ public class LosePopup : MonoBehaviour
 
     private void TouchRevive()
     {
-        if (Config.GetCoin() < Config.coinRiviveRequired)
-        {
-            GamePlayManager.Instance.OpenShopPopup();
-            return;
-        }
-
         lockGroup.gameObject.SetActive(true);
         Config.SetHeart(Config.currHeart + 1);
         Config.SetCoin(Config.currCoin - Config.coinRiviveRequired);
-        FirebaseManager.Instance.LogSpendVirtualCoin(Config.coinRiviveRequired, "revive_level_fail");
         Revive_Finished();
     }
 
     private void TouchAdsRevive()
     {
-        AdsManager.Instance.ShowRewardAd_CallBack(FirebaseManager.RewardFor.Revive, state =>
-        {
-            lockGroup.gameObject.SetActive(false);
-            //WatchAds
-            ReviveSuccess();
-        });
+        lockGroup.gameObject.SetActive(false);
+        //WatchAds
+        ReviveSuccess();
     }
 
     private void ReviveSuccess()
@@ -72,15 +62,6 @@ public class LosePopup : MonoBehaviour
 
     public void ShowLosePopup(int _level, bool _isRevive)
     {
-        Config.SetFailCount(_level);
-        FirebaseManager.Instance.LogLevelLose(Config.currLevel, Config.FailCount(_level));
-        
-        var hasPassLevel = Config.currSelectLevel != Config.currLevel;
-        if (hasPassLevel && WinStreakManager.Instance.Active)
-        {
-            Config.WIN_STREAK_INDEX = 0;
-        }
-
         SoundManager.Instance.PlaySound_GameOver();
 
         gameObject.SetActive(true);

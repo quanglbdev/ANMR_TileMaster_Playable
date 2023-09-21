@@ -28,21 +28,9 @@ public class TryAgainPopup : MonoBehaviour
 
     private void TouchTryAgain()
     {
-        if (!Config.FREE_HEART)
-        {
-            if (Config.GetHeart() < Config.HEART_REQUIRE_TO_PLAY)
-            {
-                GameDisplay.Instance.OpenMoreHeartPopup();
-                return;
-            }
-
-            Config.SetHeart(Config.currHeart - Config.HEART_REQUIRE_TO_PLAY);
-        }
-
         lockGroup.gameObject.SetActive(true);
         _hideState = HideState.Replay;
         popup.GetComponent<BBUIView>().HideView();
-        Config.isSelectLevel = true;
         Config.currSelectLevel = _level;
         GamePlayManager.Instance.SetReplayGame();
     }

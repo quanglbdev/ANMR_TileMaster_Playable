@@ -1,7 +1,6 @@
 using System.Collections;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
-using Sirenix.OdinInspector;
 using Spine.Unity;
 using UnityEngine;
 
@@ -26,7 +25,7 @@ public class GlueTile : ItemTile
     [SerializeField] private AnimationReferenceAsset outroSplitL;
 
     [SerializeField] private SpriteRenderer glueShadow;
-    [ReadOnly] public GlueTile itemDual;
+    public GlueTile itemDual;
 
     [Header("SpriteRenderer icon")] [SerializeField]
     private SpriteRenderer iconL, iconR;
@@ -34,7 +33,7 @@ public class GlueTile : ItemTile
     [Header("Particle")] [SerializeField] private ParticleSystem fx;
 
     private bool _checkMatch;
-    
+
     private Config.NEIGHBOR_TYPE _selfGlue;
 
     public Config.NEIGHBOR_TYPE SelfGlue
@@ -245,23 +244,23 @@ public class GlueTile : ItemTile
 
         shadow.gameObject.SetActive(true);
         glueShadow.gameObject.SetActive(_selfGlue == Config.NEIGHBOR_TYPE.RIGHT);
-        
+
         var color = shadow.color;
         if (itemDual != null)
             color.a = isShadow || itemDual.isShadow ? 0.6f : 0f;
         else
             color.a = isShadow ? 0.6f : 0f;
-        
+
         shadow.DOColor(color, 0.3f);
         glueShadow.DOColor(color, 0.3f);
-        
-        
+
+
         if (itemDual != null)
         {
             itemDual.shadow.gameObject.SetActive(true);
             itemDual.glueShadow.gameObject.SetActive(itemDual._selfGlue == Config.NEIGHBOR_TYPE.RIGHT);
             itemDual.shadow.DOColor(color, 0.3f);
-            itemDual.glueShadow.DOColor(color, 0.3f); 
+            itemDual.glueShadow.DOColor(color, 0.3f);
         }
     }
 
@@ -293,90 +292,6 @@ public class GlueTile : ItemTile
         return !IsTouch() || !HasBee;
     }
 
-    protected override void OnMouseEnter()
-    {
-        if (obstacleType == Config.OBSTACLE_TYPE.NONE)
-        {
-            base.OnMouseEnter();
-            return;
-        }
-
-        if (Config.gameState == Config.GAME_STATE.PLAYING)
-        {
-            if (ItemTileState == Config.ITEMTILE_STATE.FLOOR)
-            {
-                if (Config.CheckTutorial_Match3() && !IsTileTutorial) return;
-                if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.GLUE) && !IsTileTutorial) return;
-                if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.CHAIN) && !IsTileTutorial) return;
-                if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.ICE) && !IsTileTutorial) return;
-                if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.GRASS) && !IsTileTutorial) return;
-                if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.CLOCK) && !IsTileTutorial) return;
-                if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.BOMB) && !IsTileTutorial) return;
-                if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.BEE) && !IsTileTutorial) return;
-                if (Config.CheckTutorial_Undo() && Config.IsShowTutUndo) return;
-                if (Config.CheckTutorial_Suggest() && Config.isShowTut_suggest) return;
-                if (Config.CheckTutorial_Shuffle() && Config.IsShowTutShuffle) return;
-#if UNITY_EDITOR
-                //if (CannotTouch()) return;
-                // SetLayer_Hover();
-                // OTransform.DOLocalMove(Vector3.up * 0.1f, 0.1f).SetEase(Ease.Linear);
-                // if (itemDual != null)
-                // {
-                //     itemDual.SetLayer_Hover();
-                //     itemDual.OTransform.DOLocalMove(Vector3.up * 0.1f, 0.1f).SetEase(Ease.Linear);
-                // }
-#else
-            if (Input.touchCount > 0)
-                {
-                    // if(CannotTouch()) return;
-                    // //isMouseDown = false;
-                    // SetLayer_Hover();
-                    // OTransform.DOLocalMove(Vector3.up * 0.1f, 0.1f).SetEase(Ease.Linear);
-                    //  if (itemDual != null)
-                    // {
-                    //     itemDual.SetLayer_Hover();
-                    //     itemDual.OTransform.DOLocalMove(Vector3.up * 0.1f, 0.1f).SetEase(Ease.Linear);
-                    // }
-                }
-#endif
-            }
-        }
-    }
-
-    protected override void OnMouseExit()
-    {
-        if (obstacleType == Config.OBSTACLE_TYPE.NONE)
-        {
-            base.OnMouseExit();
-            return;
-        }
-
-        // if (bg.sortingLayerName.Equals("Hover"))
-        // {
-        //     SetLayer_Floor();
-        //     OTransform.DOLocalMove(Vector3.zero, 0.1f).SetEase(Ease.Linear);
-        //     if (itemDual != null)
-        //     {
-        //         itemDual.SetLayer_Floor();
-        //         itemDual.OTransform.DOLocalMove(Vector3.zero, 0.1f).SetEase(Ease.Linear);
-        //     }
-        // }
-        //
-        // if (IsTileTutorial)
-        // {
-        //     if (bg.sortingLayerName.Equals("TutHover"))
-        //     {
-        //         SetLayer_Floor();
-        //         OTransform.DOLocalMove(Vector3.zero, 0.1f).SetEase(Ease.Linear);
-        //         if (itemDual != null)
-        //         {
-        //             itemDual.SetLayer_Floor();
-        //             itemDual.OTransform.DOLocalMove(Vector3.zero, 0.1f).SetEase(Ease.Linear);
-        //         }
-        //     }
-        // }
-    }
-
     public override void OnMouseUp()
     {
         if (obstacleType == Config.OBSTACLE_TYPE.NONE)
@@ -390,31 +305,6 @@ public class GlueTile : ItemTile
             isMouseDown = false;
             StartCoroutine(YieldSetTouchItemTile());
         }
-
-        // if (bg.sortingLayerName.Equals("Hover"))
-        // {
-        //     SetLayer_Floor();
-        //     OTransform.DOScale(Vector3.one, 0.1f).SetEase(Ease.Linear);
-        //     if (itemDual != null)
-        //     {
-        //         itemDual.SetLayer_Floor();
-        //         itemDual.OTransform.DOScale(Vector3.one, 0.1f).SetEase(Ease.Linear);
-        //     }
-        // }
-        //
-        // if (IsTileTutorial)
-        // {
-        //     if (bg.sortingLayerName.Equals("TutHover"))
-        //     {
-        //         SetLayer_Floor();
-        //         OTransform.DOScale(Vector3.one, 0.1f).SetEase(Ease.Linear);
-        //         if (itemDual != null)
-        //         {
-        //             itemDual.SetLayer_Floor();
-        //             itemDual.OTransform.DOScale(Vector3.one, 0.1f).SetEase(Ease.Linear);
-        //         }
-        //     }
-        // }
     }
 
     private IEnumerator YieldSetTouchItemTile()
@@ -429,7 +319,6 @@ public class GlueTile : ItemTile
             {
                 itemDual.SetTouchItemTile();
                 itemDual._checkMatch = true;
-
             }
             else
             {
@@ -447,9 +336,11 @@ public class GlueTile : ItemTile
             {
                 Debug.Log("itemDual null");
             }
+
             _checkMatch = true;
             SetTouchItemTile();
         }
+
         yield return null;
     }
 
@@ -465,23 +356,6 @@ public class GlueTile : ItemTile
         {
             if (ItemTileState == Config.ITEMTILE_STATE.FLOOR)
             {
-                if (Config.CheckTutorial_Match3() && !IsTileTutorial) return;
-                if (IsTileTutorial) GameLevelManager.Instance.SetNextTutClickTile(this);
-
-                if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.GLUE) && !IsTileTutorial) return;
-                if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.CHAIN) && !IsTileTutorial) return;
-                if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.ICE) && !IsTileTutorial) return;
-                if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.GRASS) && !IsTileTutorial) return;
-                if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.CLOCK) && !IsTileTutorial) return;
-                if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.BOMB) && !IsTileTutorial) return;
-                if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.BEE) && !IsTileTutorial) return;
-
-                if (IsTileTutorial) GameLevelManager.Instance.SetNextTutClickTile(this);
-
-                if (Config.CheckTutorial_Undo() && Config.IsShowTutUndo) return;
-                if (Config.CheckTutorial_Suggest() && Config.isShowTut_suggest) return;
-                if (Config.CheckTutorial_Shuffle() && Config.IsShowTutShuffle) return;
-
                 if (CannotTouch()) return;
 
                 if (itemDual != null)
@@ -489,7 +363,6 @@ public class GlueTile : ItemTile
 
                 OTransform.DOLocalMove(Vector3.up * 0.5f, 0.1f).SetEase(Ease.Linear);
 
-                GamePlayManager.Instance.HideTut_HandGuide();
                 SoundManager.Instance.PlaySound_BlockClick();
 
                 NeighborsFinder();
@@ -635,7 +508,7 @@ public class GlueTile : ItemTile
 
             ItemTileState = Config.ITEMTILE_STATE.SLOT;
             SoundManager.Instance.PlaySound_BlockMoveFinish();
-            
+
             GameLevelManager.Instance.SetMoveItemSlot_Finished(_checkMatch);
         });
     }

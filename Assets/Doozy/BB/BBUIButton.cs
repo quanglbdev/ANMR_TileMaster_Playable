@@ -4,7 +4,6 @@ using Doozy.Engine.UI.Animation;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Doozy.Engine.UI.Base;
-using Sirenix.OdinInspector;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(Button))]
@@ -12,31 +11,23 @@ using UnityEngine.Events;
 public class BBUIButton : UIComponentBase<BBUIButton>, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler,
     IPointerUpHandler, IPointerClickHandler, ISelectHandler, IDeselectHandler
 {
-    //public bool WanderAround;
-    //[ConditionalField("WanderAround")] public float WanderDistance = 5;
     public bool AllowMultipleClicks = false;
 
     public bool BlockAllButtonClicks = true;
 
-    //public AIState NextState = AIState.None;
-    //[ConditionalField("NextState", AIState.Idle)] public float IdleTime = 5;
-    [ToggleGroup("UseOnPointerClick")] [SerializeField]
-    private bool UseOnPointerClick;
+    [SerializeField] private bool UseOnPointerClick;
 
-    [ToggleGroup("UseOnPointerClick")] public BBUIButtonBehavior OnPointerClick_BBUIButtonBehavior;
+    public BBUIButtonBehavior OnPointerClick_BBUIButtonBehavior;
 
-    [ToggleGroup("UseOnPointerClick")] public UnityEvent OnPointerClickCallBack_Start;
-    // [ToggleGroup("UseOnPointerClick")] public UnityEvent OnPointerClickCallBack_Completed;
+    public UnityEvent OnPointerClickCallBack_Start;
 
-    [ToggleGroup("UseOnPointerDown")] [SerializeField]
-    private bool UseOnPointerDown;
+    [SerializeField] private bool UseOnPointerDown;
 
-    [ToggleGroup("UseOnPointerDown")] public UnityEvent OnPointerDownCallBack;
+    public UnityEvent OnPointerDownCallBack;
 
-    [ToggleGroup("UseOnPointerUp")] [SerializeField]
-    private bool UseOnPointerUp;
+    [SerializeField] private bool UseOnPointerUp;
 
-    [ToggleGroup("UseOnPointerUp")] public UnityEvent OnPointerUpCallBack;
+    public UnityEvent OnPointerUpCallBack;
 
 
     public override void Start()
@@ -60,10 +51,6 @@ public class BBUIButton : UIComponentBase<BBUIButton>, IPointerEnterHandler, IPo
 
     public void OnPointerClick()
     {
-        //if (UseOnPointerClick)
-        //{
-        //    if (OnPointerClickCallBack != null) OnPointerClickCallBack.Invoke();
-        //}
         if (UseOnPointerClick)
         {
             if (SettingBBUIButton.isClickAvaiable)
@@ -80,11 +67,6 @@ public class BBUIButton : UIComponentBase<BBUIButton>, IPointerEnterHandler, IPo
                     }
 
                     OnPointerClick_BBUIButtonBehavior.PlayAnimation(this);
-
-                    // if (OnPointerClickCallBack_Completed != null)
-                    // {
-                    //     CallBack_OnPointerClick_Completed(OnPointerClick_BBUIButtonBehavior.GetTotalDuration());
-                    // }
                 }
             }
         }
@@ -92,8 +74,6 @@ public class BBUIButton : UIComponentBase<BBUIButton>, IPointerEnterHandler, IPo
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        //throw new NotImplementedException();
-        //Debug.Log("OnPointerDownOnPointerDown");
         if (UseOnPointerDown)
         {
             OnPointerDownCallBack.Invoke();
@@ -102,20 +82,14 @@ public class BBUIButton : UIComponentBase<BBUIButton>, IPointerEnterHandler, IPo
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        //throw new NotImplementedException();
-        //Debug.Log("OnPointerEnterOnPointerEnter");
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        //throw new NotImplementedException();
-        //Debug.Log("OnPointerExitOnPointerExit");
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        //throw new NotImplementedException();
-        //Debug.Log("OnPointerUpOnPointerUp");
         if (UseOnPointerUp)
         {
             OnPointerUpCallBack.Invoke();
@@ -124,16 +98,7 @@ public class BBUIButton : UIComponentBase<BBUIButton>, IPointerEnterHandler, IPo
 
     public void OnSelect(BaseEventData eventData)
     {
-        //throw new NotImplementedException();
-        //Debug.Log("OnSelectOnSelectOnSelect");
     }
-
-
-    public void TouchClick()
-    {
-        //Debug.Log("TouchClickTouchClickTouchClick");
-    }
-
 
     #region MULTI_CLICK
 
@@ -156,7 +121,7 @@ public class BBUIButton : UIComponentBase<BBUIButton>, IPointerEnterHandler, IPo
     public bool Interactable
     {
         get { return Button.interactable; }
-            set { Button.interactable = value; }
+        set { Button.interactable = value; }
     }
 
     /// <summary> Sets Interactable property to FALSE </summary>
@@ -202,7 +167,6 @@ public class BBUIButton : UIComponentBase<BBUIButton>, IPointerEnterHandler, IPo
 
     private IEnumerator DisableAllBBUIButtonEnumerator(float duration)
     {
-        //Debug.Log("DisableAllBBUIButtonEnumerator"+duration);
         if (Settings.IgnoreUnityTimescale) //check if the UI ignores Unity's Time.Timescale or not
             yield return
                 new WaitForSecondsRealtime(duration); //wait for seconds realtime (ignore Unity's Time.Timescale)
@@ -210,7 +174,6 @@ public class BBUIButton : UIComponentBase<BBUIButton>, IPointerEnterHandler, IPo
             yield return new WaitForSeconds(duration); //wait for seconds (respect Unity's Time.Timescale)
 
         SettingBBUIButton.isClickAvaiable = true;
-        //Debug.Log("DisableAllBBUIButtonEnumerator"+ SettingBBUIButton.isClickAvaiable);
         m_disableAllBBUIButtonCoroutine = null;
     }
 
@@ -229,7 +192,6 @@ public class BBUIButton : UIComponentBase<BBUIButton>, IPointerEnterHandler, IPo
             yield return new WaitForSeconds(duration); //wait for seconds (respect Unity's Time.Timescale)
 
 
-        //OnPointerClickCallBack_Completed.Invoke();
         StartCoroutine(DisableAllBBUIButtonEnumerator(0f));
     }
 
@@ -249,10 +211,5 @@ public class BBUIButton : UIComponentBase<BBUIButton>, IPointerEnterHandler, IPo
         StopCoroutine(m_disableButtonCoroutine);
         m_disableButtonCoroutine = null;
         EnableButton();
-    }
-
-    public override void OnEnable()
-    {
-        base.OnEnable();
     }
 }

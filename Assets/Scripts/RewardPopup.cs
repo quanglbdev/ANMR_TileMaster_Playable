@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class RewardPopup : MonoBehaviour
 {
-
     [Header("Popup")] public GameObject popup;
     public GameObject lockGroup;
     public List<ConfigItemShopData> listDatas = new();
@@ -50,10 +49,6 @@ public class RewardPopup : MonoBehaviour
     private void TouchClose()
     {
         SoundManager.Instance.PlaySound_Cash();
-        foreach (var item in listDatas)
-        {
-            Config.BuySuccess_ItemShop(item);
-        }
 
         lockGroup.gameObject.SetActive(true);
         if (GamePlayManager.Instance != null)
@@ -73,22 +68,10 @@ public class RewardPopup : MonoBehaviour
     {
         watchAdsBtn.interactable = false;
         lockGroup.gameObject.SetActive(true);
-        AdsManager.Instance.ShowRewardAd_CallBack(FirebaseManager.RewardFor.X2Reward, state =>
-            {
-                lockGroup.gameObject.SetActive(false);
-                //WatchAds
-                WatchAds_Finished();
-            }, () =>
-            {
-                lockGroup.gameObject.SetActive(false);
-                watchAdsBtn.interactable = false;
-            }
-            , () =>
-            {
-                lockGroup.gameObject.SetActive(false);
-                watchAdsBtn.interactable = false;
-            }
-        );
+
+        lockGroup.gameObject.SetActive(false);
+        //WatchAds
+        WatchAds_Finished();
     }
 
 
@@ -98,8 +81,6 @@ public class RewardPopup : MonoBehaviour
         foreach (var item in listDatas)
         {
             item.countItem *= 2;
-
-            Config.BuySuccess_ItemShop(item);
         }
 
         lockGroup.gameObject.SetActive(true);
@@ -195,15 +176,5 @@ public class RewardPopup : MonoBehaviour
     private void HidePopup_Finished()
     {
         gameObject.SetActive(false);
-
-        switch (_rewardState)
-        {
-            case Config.REWARD_STATE.BUY:
-                break;
-            case Config.REWARD_STATE.MAP_COMPLETED:
-                GameDisplay.Instance.OpenLoadingPopup();
-                MenuManager.instance.LoadNewMap();
-                break;
-        }
     }
 }

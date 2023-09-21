@@ -234,23 +234,6 @@ public class ItemTile : MonoBehaviour
         {
             if (ItemTileState == Config.ITEMTILE_STATE.FLOOR || ItemTileState == Config.ITEMTILE_STATE.RETURN_FLOOR)
             {
-                if (Config.CheckTutorial_Match3() && !IsTileTutorial) return;
-                if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.GLUE) && !IsTileTutorial) return;
-                if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.CHAIN) && !IsTileTutorial) return;
-                if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.ICE) && !IsTileTutorial) return;
-                if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.GRASS) && !IsTileTutorial) return;
-                if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.CLOCK) && !IsTileTutorial) return;
-                if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.BOMB) && !IsTileTutorial) return;
-                if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.BEE) && !IsTileTutorial) return;
-                if (IsTileTutorial) GameLevelManager.Instance.SetNextTutClickTile(this);
-                     
-                if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.GRASS) && IsTileTutorial)
-                    TutorialManager.Instance.HideTut_ClickTileGrass();
-
-                if (Config.CheckTutorial_Undo() && Config.IsShowTutUndo) return;
-                if (Config.CheckTutorial_Suggest() && Config.isShowTut_suggest) return;
-                if (Config.CheckTutorial_Shuffle() && Config.IsShowTutShuffle) return;
-
                 if (CannotTouch()) return;
 
                 if (!GameLevelManager.Instance.IsItemTileMoveToSlot())
@@ -258,7 +241,6 @@ public class ItemTile : MonoBehaviour
                     return;
                 }
 
-                GamePlayManager.Instance.HideTut_HandGuide();
                 SoundManager.Instance.PlaySound_BlockClick();
                 itemTileCheckCollision.gameObject.SetActive(false);
 
@@ -280,60 +262,6 @@ public class ItemTile : MonoBehaviour
     {
         return (!IsTouch() || !HasBee);
     }
-
-    protected virtual void OnMouseEnter()
-    {
-        if (Config.gameState == Config.GAME_STATE.PLAYING)
-        {
-            if (ItemTileState == Config.ITEMTILE_STATE.FLOOR || ItemTileState == Config.ITEMTILE_STATE.RETURN_FLOOR)
-            {
-                if (Config.CheckTutorial_Match3() && !IsTileTutorial) return;
-                if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.GLUE) && !IsTileTutorial) return;
-                if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.CHAIN) && !IsTileTutorial) return;
-                if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.ICE) && !IsTileTutorial) return;
-                if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.GRASS) && !IsTileTutorial) return;
-                if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.CLOCK) && !IsTileTutorial) return;
-                if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.BOMB) && !IsTileTutorial) return;
-                if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.BEE) && !IsTileTutorial) return;
-                if (Config.CheckTutorial_Undo() && Config.IsShowTutUndo) return;
-                if (Config.CheckTutorial_Suggest() && Config.isShowTut_suggest) return;
-                if (Config.CheckTutorial_Shuffle() && Config.IsShowTutShuffle) return;
-#if UNITY_EDITOR
-                if (CannotTouch()) return;
-                // SetLayer_Hover();
-                // OTransform.DOScale(Vector3.one * 1.1f, 0.1f).SetEase(Ease.Linear);
-#else
-            if (Input.touchCount > 0)
-                {
-                    // if(CannotTouch()) return;
-                    // //isMouseDown = false;
-                    // SetLayer_Hover();
-                    // OTransform.DOScale(Vector3.one * 1.1f, 0.1f).SetEase(Ease.Linear);
-                }
-#endif
-            }
-        }
-    }
-
-
-    protected virtual void OnMouseExit()
-    {
-        // if (bg.sortingLayerName.Equals("Hover"))
-        // {
-        //     SetLayer_Floor();
-        //     OTransform.DOScale(Vector3.one, 0.1f).SetEase(Ease.Linear);
-        // }
-        //
-        // if (IsTileTutorial)
-        // {
-        //     if (bg.sortingLayerName.Equals("TutHover"))
-        //     {
-        //         SetLayer_Floor();
-        //         OTransform.DOScale(Vector3.one, 0.1f).SetEase(Ease.Linear);
-        //     }
-        // }
-    }
-
 
     protected virtual void SetLayer_Move()
     {
@@ -395,6 +323,7 @@ public class ItemTile : MonoBehaviour
         {
             sortingOrder = 9999;
         }
+
         bg.sortingOrder = sortingOrder;
         icon.sortingOrder = sortingOrder;
         shadow.sortingOrder = sortingOrder;

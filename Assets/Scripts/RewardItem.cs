@@ -10,11 +10,11 @@ public class RewardItem : MonoBehaviour
 
     public void InitSpinItem(ConfigItemShopData data)
     {
-        this._configItemShopData = data;
-        switch (this._configItemShopData.shopItemType)
+        _configItemShopData = data;
+        switch (_configItemShopData.shopItemType)
         {
             case Config.SHOPITEM.COIN:
-                txtCountItem.text = $"{this._configItemShopData.countItem}";
+                txtCountItem.text = $"{_configItemShopData.countItem}";
                 break;
             case Config.SHOPITEM.UNDO:
             case Config.SHOPITEM.SUGGEST:
@@ -22,17 +22,16 @@ public class RewardItem : MonoBehaviour
             case Config.SHOPITEM.TILE_RETURN:
             case Config.SHOPITEM.EXTRA_SLOT:
             case Config.SHOPITEM.STAR:
-                txtCountItem.text = $"x{this._configItemShopData.countItem}";
+                txtCountItem.text = $"x{_configItemShopData.countItem}";
                 break;
             case Config.SHOPITEM.FREE_HEART:
-                txtCountItem.text = $"{this._configItemShopData.countItem}m";
+                txtCountItem.text = $"{_configItemShopData.countItem}m";
                 break;
             case Config.SHOPITEM.HEART:
-                txtCountItem.text = $"+{this._configItemShopData.countItem}";
-
+                txtCountItem.text = $"+{_configItemShopData.countItem}";
                 break;
             case Config.SHOPITEM.COMBO:
-                txtCountItem.text = $"{this._configItemShopData.countItem}";
+                txtCountItem.text = $"{_configItemShopData.countItem}";
                 break;
             default:
                 throw new ArgumentOutOfRangeException();

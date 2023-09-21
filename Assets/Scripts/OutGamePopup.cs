@@ -26,7 +26,6 @@ public class OutGamePopup : MonoBehaviour
     {
         HidePopup_Finished();
         GamePlayManager.Instance.HideView();
-        Config.WIN_STREAK_INDEX = 0;
     }
 
     private void TouchClose()
@@ -51,23 +50,9 @@ public class OutGamePopup : MonoBehaviour
 
         btnLeave.gameObject.SetActive(false);
 
-        if (WinStreakManager.Instance.Active && Config.WIN_STREAK_INDEX > 0)
-        {
-            content1.SetActive(false);
-            content2.SetActive(true);
-            trophy.SetActive(true);
-
-            content2.GetComponent<TextMeshProUGUI>().text =
-                $"  You lose a life and {Config.WIN_STREAK_INDEX} win streak!";
-            
-            winStreak.text = $"{Config.WIN_STREAK_INDEX}";
-        }
-        else
-        {
-            content1.SetActive(true);
-            content2.SetActive(false);
-            trophy.SetActive(false);
-        }
+        content1.SetActive(true);
+        content2.SetActive(false);
+        trophy.SetActive(false);
 
         InitViews_ShowView();
     }

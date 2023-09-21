@@ -1,5 +1,4 @@
 ﻿using System;
-using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,20 +19,20 @@ public class GameLevelManager : MonoBehaviour
     public TextMeshProUGUI score;
 
     public StarGroup starGroup;
-    [Title("CONFIG LEVEL")] public ConfigLevelGame configLevelGame;
+    [Header("CONFIG LEVEL")] public ConfigLevelGame configLevelGame;
 
-    [Space(20)] [InfoBox("Các item hiện trên map")]
+    [Space(20)] [Header("Các item hiện trên map")]
     public List<ItemData> listItemDataOnMaps = new();
 
     public List<ItemData> listItemDataTemp = new();
 
-    [Space(20)] [InfoBox("Số lượng data type trong map này")]
+    [Space(20)] [Header("Số lượng data type trong map này")]
     public int dataAmountOnMap = 0;
 
     [Space(20)]
-    [InfoBox("Thời gian hoàn thành game")]
+    [Header("Thời gian hoàn thành game")]
     [Space(20)]
-    [InfoBox("Nếu bằng set = 0 => màn chơi không cần thời gian hoàn thành")]
+    [Header("Nếu bằng set = 0 => màn chơi không cần thời gian hoàn thành")]
     public int secondsRequired = 0;
 
     [Header("TileMaps")] public List<Tilemap> listTileMaps = new();
@@ -72,11 +71,6 @@ public class GameLevelManager : MonoBehaviour
 
     public void StartGame()
     {
-        if (Config.CheckTutorial_Match3())
-        {
-            //slotBG.GetComponent<SpriteRenderer>().sortingLayerName = "TutUI";
-        }
-
         Slot = 7;
         extraSlotIcon.SetActive(true);
         extraSlotIcon.transform.localScale = Vector3.one;
@@ -89,8 +83,6 @@ public class GameLevelManager : MonoBehaviour
         starGroup.StartGame(maxScore, _levelDifficulty);
         RestartScore();
         StartCoroutine(ShowSlotBg());
-        // GamePlayManager.instance.UpdateTileReturnStatus(CheckTileReturnAvailable());
-        // GamePlayManager.instance.SetInteractableUndoButton(CheckUndoAvailable());
         listTileReturn_ItemTiles.Clear();
         _floorTileReturn = 1;
     }
@@ -273,9 +265,6 @@ public class GameLevelManager : MonoBehaviour
             var itemTileData3 = new ItemTileData(2, 102, new Vector2Int(-1, 1));
             listItemTileDatas.Add(itemTileData3);
             itemTileData3.itemData = listItemDataOnMaps[indexItemData];
-
-
-            listItemTile_Tutorials.Clear();
         }
 
         FloorGenerateItemTileDatas();
@@ -286,7 +275,6 @@ public class GameLevelManager : MonoBehaviour
         GlueTile lastLeftGlueTile = null;
         _tilesCheck.Clear();
         _listBee.Clear();
-        listItemTile_Tutorials.Clear();
         for (var i = 0; i < listItemTileDatas.Count; i++)
         {
             var itemTile = new ItemTile();
@@ -343,91 +331,16 @@ public class GameLevelManager : MonoBehaviour
             _tilesCheck.Add(itemTile);
             StartCoroutine(PlaySound_MoveBoardStart(listItemTileDatas[i].floorIndex));
 
-            if (Config.CheckTutorial_Match3())
-            {
-                if (i >= listItemTileDatas.Count - 3)
-                {
-                    listItemTile_Tutorials.Add(itemTile);
-                    itemTile.SetItemTileTut();
-                }
-            }
-
-            if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.GLUE))
-            {
-                if (i >= listItemTileDatas.Count - 1)
-                {
-                    listItemTile_Tutorials.Add(itemTile);
-                }
-            }
-
-            if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.CHAIN))
-            {
-                // if (listItemTileDatas[i].floorIndex == 4)
-                // {
-                //     listItemTile_Tutorials.Add(itemTile);
-                // }
-
-                if (i is 42 or 43 or 41)
-                {
-                    listItemTile_Tutorials.Add(itemTile);
-                }
-            }
-
-            if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.ICE))
-            {
-                if (listItemTileDatas[i].floorIndex == 3 &&
-                    listItemTileDatas[i].obstacleType != Config.OBSTACLE_TYPE.NONE)
-                {
-                    listItemTile_Tutorials.Add(itemTile);
-                }
-            }
-
-            if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.GRASS))
-            {
-                if (listItemTileDatas[i].floorIndex == 4)
-                {
-                    listItemTile_Tutorials.Add(itemTile);
-                }
-            }
-
-            if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.BOMB))
-            {
-                if (i is 33 or 34)
-                {
-                    listItemTile_Tutorials.Add(itemTile);
-                }
-            }
-
-            if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.BEE))
-            {
-                if (listItemTileDatas[i].floorIndex == 4)
-                {
-                    listItemTile_Tutorials.Add(itemTile);
-                }
-            }
-
-
             AddTileToMap(itemTile);
         }
 
         SetStartLevelGame();
     }
 
-    public void FinishTutorial()
-    {
-        foreach (var tile in _tilesCheck)
-        {
-            if (tile.IsTileTutorial)
-            {
-                tile.IsTileTutorial = false;
-            }
-        }
-    }
-
     private void SetStartLevelGame()
     {
         StartCoroutine(SetStartLevelGameYield());
-        StartCoroutine(SetupTutTileReturnYield());
+        //StartCoroutine(SetupTutTileReturnYield());
     }
 
     private IEnumerator SetStartLevelGameYield()
@@ -438,7 +351,6 @@ public class GameLevelManager : MonoBehaviour
 
     private IEnumerator SetupTutTileReturnYield()
     {
-        if (!Config.CheckTutorial_TileReturn()) yield break;
         yield return new WaitForSeconds(1f);
         var tiles = GetListTutorialTileReturn();
         foreach (var tile in tiles)
@@ -523,7 +435,6 @@ public class GameLevelManager : MonoBehaviour
 
     private void BeeAction()
     {
-        if (Config.currSelectLevel < Config.LEVEL_UNLOCK_BEE) return;
         foreach (var bee in _listBee)
         {
             bee.JumpToTile();
@@ -639,11 +550,6 @@ public class GameLevelManager : MonoBehaviour
                 StartCoroutine(SetListItemSlot_ResetPosition_Now());
             });
         }
-
-        if (Config.CheckTutorial_Undo())
-        {
-            TutorialManager.Instance.ShowTut_Undo();
-        }
     }
 
     private void SetItemSlot(ItemTile itemTile)
@@ -681,7 +587,7 @@ public class GameLevelManager : MonoBehaviour
         listTile.AddRange(itemsTileMap[2]);
         var temp = itemsTileMap[1][0];
         foreach (var tile in listTile.Where(tile =>
-                     temp != null && temp.itemData != tile.itemData && tile.GetComponent<GlueTile>() == null))
+                     temp != null && temp.itemData != tile.itemData && tile.obstacleType == Config.OBSTACLE_TYPE.NONE))
         {
             resp.Add(tile);
             temp = tile;
@@ -773,7 +679,6 @@ public class GameLevelManager : MonoBehaviour
 
     private IEnumerator SetListItemSlot_ResetPosition_Now()
     {
-        TutorialManager.Instance.HideHandGuild();
         yield return new WaitForSeconds(0.01f);
         for (int i = 0; i < listItemSlots.Count; i++)
         {
@@ -941,7 +846,7 @@ public class GameLevelManager : MonoBehaviour
                 SoundManager.Instance.PlaySound_FreeBlock();
             }
         }
-        
+
         if (listItemSlots.Count < Slot)
         {
             return false;
@@ -1039,11 +944,6 @@ public class GameLevelManager : MonoBehaviour
 
     [Header("UNDO")] public List<ItemTileSlot> listCheckUndo_ItemTileSlots = new();
 
-    public bool CheckUndoAvailable()
-    {
-        return Config.currLevel >= Config.LEVEL_UNLOCK_UNDO;
-    }
-
     public bool CheckMoveUndo()
     {
         return listCheckUndo_ItemTileSlots.Count == 0;
@@ -1136,11 +1036,6 @@ public class GameLevelManager : MonoBehaviour
 
     public bool SetTileReturn()
     {
-        if (Config.CheckTutorial_TileReturn() && Config.isShowTut_TileReturn)
-        {
-            TutorialManager.Instance.HideTut_TileReturn();
-        }
-
         var parent = _floorTileReturn switch
         {
             1 => listPointTileReturn,
@@ -1218,7 +1113,7 @@ public class GameLevelManager : MonoBehaviour
 
     [Header("SUGGEST")] public List<ItemTile> listSuggest_ItemTiles = new();
 
-    [ShowInInspector] public Dictionary<Config.ITEM_TYPE, List<ItemTile>> dicItemTiles = new();
+    public Dictionary<Config.ITEM_TYPE, List<ItemTile>> dicItemTiles = new();
 
     //Bộ dic này là cả sáng cả mờ
     private Dictionary<Config.ITEM_TYPE, List<ItemTile>> _dicItemTilesAll = new();
@@ -1598,7 +1493,6 @@ public class GameLevelManager : MonoBehaviour
         return null;
     }
 
-
     //Tim 1 item tile co itemData giong itemTile hien tai
     private ItemTile Find_ItemTile(ItemTile itemTile)
     {
@@ -1651,105 +1545,4 @@ public class GameLevelManager : MonoBehaviour
     }
 
     #endregion
-
-    #region TUT
-
-    public List<ItemTile> listItemTile_Tutorials = new();
-
-    public void ShowTutClickTile_Match3_HandGuild()
-    {
-        var spriteRenderer = listItemTile_Tutorials[0].bg;
-        var sprite = spriteRenderer.sprite;
-        var deltaSize = sprite.rect.size;
-        TutorialManager.Instance.SetDeltaSizeUnMask(deltaSize * floor.localScale.x, .2f, sprite);
-
-        var posX = listItemTile_Tutorials[0].transform.position.x;
-        var posY = listItemTile_Tutorials[0].transform.position.y;
-        TutorialManager.Instance.SetPositionHandGuild_AndMask(new Vector3(posX, posY, 0));
-    }
-
-    public void ShowTutClickTileGlue_HandGuild()
-    {
-        SetItemTilesTut();
-
-        var posX = listItemTile_Tutorials[0].transform.position.x;
-        var posY = listItemTile_Tutorials[0].transform.position.y;
-        TutorialManager.Instance.SetPositionHandGuild(new Vector3(posX, posY, 0));
-    }
-
-    public void SetItemTilesTut()
-    {
-        foreach (var tile in listItemTile_Tutorials)
-        {
-            tile.SetItemTileTut();
-        }
-    }
-
-    public void ShowTutClickTileChain_HandGuild()
-    {
-        SetItemTilesTut();
-        var tile = listItemTile_Tutorials.Find(x => x.obstacleType == Config.OBSTACLE_TYPE.NONE);
-
-        var spriteRenderer = tile.bg;
-        var sprite = spriteRenderer.sprite;
-        var deltaSize = sprite.rect.size;
-        TutorialManager.Instance.SetDeltaSizeUnMask(deltaSize * floor.localScale.x, .2f, sprite);
-
-        var posX = tile.transform.position.x;
-        var posY = tile.transform.position.y;
-        TutorialManager.Instance.SetPositionHandGuild_AndMask(new Vector3(posX, posY, 0));
-    }
-
-    public void SetNextTutClickTile(ItemTile itemTile)
-    {
-        if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.CHAIN))
-            listItemTile_Tutorials.Clear();
-        else
-        {
-            listItemTile_Tutorials.Remove(itemTile);
-        }
-
-
-        if (listItemTile_Tutorials.Count > 0)
-        {
-            if (Config.CheckTutorial_Match3())
-                ShowTutClickTile_Match3_HandGuild();
-        }
-        else
-        {
-            if (Config.CheckTutorial_Match3())
-                TutorialManager.Instance.HideTut_ClickTile();
-
-            if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.GLUE))
-                TutorialManager.Instance.HideTut_ClickTileGlue();
-
-            if (Config.CheckShowItemUnlockFinished(Config.ITEM_UNLOCK.CHAIN))
-                TutorialManager.Instance.HideTut_ClickTileChain();
-
-            slotBG.GetComponent<SpriteRenderer>().sortingLayerName = "Default";
-        }
-    }
-
-    #endregion
-
-    [Button]
-    public void Count()
-    {
-        var tileOnMap = 0;
-        foreach (var map in listTileMaps)
-        {
-            for (var y = map.cellBounds.yMin; y < map.cellBounds.yMax; y++)
-            {
-                for (var x = map.cellBounds.xMin; x < map.cellBounds.xMax; x++)
-                {
-                    if (map.HasTile(new Vector3Int(x, y, 0)))
-                    {
-                        tileOnMap++;
-                    }
-                }
-            }
-        }
-
-        Debug.LogError("tileOnMap: " + tileOnMap);
-    }
 }

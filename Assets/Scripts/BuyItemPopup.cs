@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using DG.Tweening;
 using TMPro;
 using UnityEngine.UI;
+
 public class BuyItemPopup : MonoBehaviour
 {
     public BBUIButton btnClose, btnWatchAds;
@@ -19,10 +21,11 @@ public class BuyItemPopup : MonoBehaviour
     }
 
     private ConfigItemShopData configItemShop;
+
     public void OpenBuyItemPopup(Config.ITEMHELP_TYPE itemType)
     {
         var boosterDefinition = AssetManager.Instance.GetBoosterDefinition(itemType);
-        
+
         configItemShop = new ConfigItemShopData
         {
             shopItemType = Config.ConvertItemHelpTypeToShopItem(itemType),
@@ -45,26 +48,33 @@ public class BuyItemPopup : MonoBehaviour
     {
         lockGroup.gameObject.SetActive(true);
         popup.GetComponent<BBUIView>().HideView();
-
     }
+
     private void TouchBuyItem()
     {
-        if (Config.currCoin >= configItemShop.price)
+        switch (configItemShop.shopItemType)
         {
-            Config.SetCoin(Config.currCoin - configItemShop.price);
-            FirebaseManager.Instance.LogSpendVirtualCoin(configItemShop.price, "buy_" + configItemShop.shopItemType + "_in_game");
-            Config.BuySuccess_ItemShop(configItemShop);
-            GamePlayManager.Instance.SetBuyItem_Success();
-
-            NotificationPopup.instance.AddNotification("Buy Success!");
-            TouchClose();
+            case Config.SHOPITEM.UNDO:
+                Config.SetCount_ItemHelp(Config.ITEMHELP_TYPE.UNDO, configItemShop.countItem);
+                break;
+            case Config.SHOPITEM.SUGGEST:
+                Config.SetCount_ItemHelp(Config.ITEMHELP_TYPE.SUGGEST, configItemShop.countItem);
+                break;
+            case Config.SHOPITEM.SHUFFLE:
+                Config.SetCount_ItemHelp(Config.ITEMHELP_TYPE.SHUFFLE, configItemShop.countItem);
+                break;
+            case Config.SHOPITEM.TILE_RETURN:
+                Config.SetCount_ItemHelp(Config.ITEMHELP_TYPE.TILE_RETURN, configItemShop.countItem);
+                break;
+            case Config.SHOPITEM.EXTRA_SLOT:
+                Config.SetCount_ItemHelp(Config.ITEMHELP_TYPE.EXTRA_SLOT, configItemShop.countItem);
+                break;
         }
-        else {
-            NotificationPopup.instance.AddNotification("Not enough Coin!");
-            GamePlayManager.Instance.OpenShopPopup();
-        }
-
+        GamePlayManager.Instance.SetBuyItem_Success();
+        NotificationPopup.instance.AddNotification("Buy Success!");
+        TouchClose();
     }
+
     private void HidePopup_Finished()
     {
         GamePlayManager.Instance.SetUnPause();
@@ -81,15 +91,6 @@ public class BuyItemPopup : MonoBehaviour
         txtDescription.gameObject.SetActive(false);
         txtCount.transform.parent.gameObject.SetActive(false);
 
-        if (AdsManager.Instance.isRewardAds_Available)
-        {
-            btnWatchAds.Interactable = true;
-        }
-        else
-        {
-            btnWatchAds.Interactable = false;
-        }
-        
         btnClose.gameObject.SetActive(false);
         InitView_ShowView();
     }
@@ -102,14 +103,14 @@ public class BuyItemPopup : MonoBehaviour
             popup.gameObject.SetActive(true);
             popup.GetComponent<BBUIView>().ShowView();
         });
-        
+
         sequenceShowView.InsertCallback(0.03f, () =>
         {
             btnWatchAds.gameObject.SetActive(false);
             btnWatchAds.gameObject.GetComponent<BBUIView>().ShowView();
-            
+
             txtDescription.gameObject.SetActive(true);
-            txtDescription.gameObject.GetComponent<BBUIView>().ShowView(); 
+            txtDescription.gameObject.GetComponent<BBUIView>().ShowView();
         });
 
 
@@ -117,10 +118,10 @@ public class BuyItemPopup : MonoBehaviour
         {
             txtCount.transform.parent.gameObject.SetActive(true);
             txtCount.GetComponentInParent<BBUIView>().ShowView();
-            
+
             icon.gameObject.SetActive(true);
             icon.gameObject.GetComponent<BBUIView>().ShowView();
-            
+
             btnClose.gameObject.SetActive(false);
             btnClose.gameObject.GetComponent<BBUIView>().ShowView();
         });

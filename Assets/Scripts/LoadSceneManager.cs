@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using Facebook.Unity;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -14,17 +13,6 @@ public class LoadSceneManager : MonoBehaviour
             instance = this;
 
         Application.targetFrameRate = 60;
-        if (!FB.IsInitialized)
-        {
-            // Initialize the Facebook SDK
-            FB.Init();
-            Debug.Log("FBInit is called with appID:" + FB.AppId);
-        }
-        else
-        {
-            // Already initialized, signal an app activation App Event
-            FB.ActivateApp();
-        }
     }
 
     private void Start()
@@ -39,12 +27,7 @@ public class LoadSceneManager : MonoBehaviour
         Config.currHammer = Config.GetHammer();
         Config.currStar = Config.GetStar();
         Config.currBuildingStar = Config.GetBuildingStar();
-        Config.currPiggyBankCoin = Config.GetPiggyBank();
         Config.GetLevelStar();
-        Config.GetFailCount();
-        Config.GetCurrentEvent();
-        Config.GetRewardsClaimedWinStreak();
-        Config.SetCurrentEvent(new List<Config.EVENT> { Config.EVENT.WIN_STREAK });
         if (Config.isMusic)
         {
             MusicManager.Instance.PlayMusicBackground();

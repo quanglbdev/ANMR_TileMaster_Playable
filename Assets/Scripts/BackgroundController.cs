@@ -1,11 +1,9 @@
 using DG.Tweening;
-using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class BackgroundController : MonoBehaviour
 {
-    private int CurrentLevel => Config.currLevel;
     [SerializeField] private GameObject backgroundDefault;
     [SerializeField] private Image backgroundMap;
 
@@ -22,7 +20,7 @@ public class BackgroundController : MonoBehaviour
     public void UpdateBackground()
     {
         UnBlurMaterial();
-        backgroundDefault.SetActive(CurrentLevel <= Config.LEVEL_UNLOCK_BUILDING);
+        backgroundDefault.SetActive(false);
         SetBackgroundIndex();
     }
 
@@ -46,7 +44,6 @@ public class BackgroundController : MonoBehaviour
         backgroundMap.sprite = map.background;
     }
 
-    [Button]
     public void BlurMaterial()
     {
         if (_material.HasProperty("_Size"))
@@ -61,8 +58,7 @@ public class BackgroundController : MonoBehaviour
         backgroundMap.sprite = map.background;
     }
 
-    [Button]
-    public void UnBlurMaterial()
+    private void UnBlurMaterial()
     {
         if (_material.HasProperty("_Size"))
         {
