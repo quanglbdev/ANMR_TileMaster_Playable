@@ -357,14 +357,7 @@ public class GlueTile : ItemTile
             if (ItemTileState == Config.ITEMTILE_STATE.FLOOR)
             {
                 if (CannotTouch()) return;
-
-                if (itemDual != null)
-                    itemDual.OTransform.DOLocalMove(Vector3.up * 0.5f, 0.1f).SetEase(Ease.Linear);
-
-                OTransform.DOLocalMove(Vector3.up * 0.5f, 0.1f).SetEase(Ease.Linear);
-
                 SoundManager.Instance.PlaySound_BlockClick();
-
                 NeighborsFinder();
 
                 ItemTileState = ItemTileState == Config.ITEMTILE_STATE.RETURN_FLOOR
@@ -375,17 +368,17 @@ public class GlueTile : ItemTile
                 SetTouch_Available(false);
                 SetShadow_Available(false);
                 itemTileCheckCollision.gameObject.SetActive(false);
-                OnAnimSplit();
+                await OnAnimSplit();
 
                 obstacleType = Config.OBSTACLE_TYPE.NONE;
-                GameLevelManager.Instance.AddItemSlot(this, split.Animation.Duration / glue.timeScale * Time.timeScale);
+                GameLevelManager.Instance.AddItemSlot(this);
             }
         }
     }
 
     private async UniTask OnAnimSplit()
     {
-        var timeScale = 2;
+        var timeScale = 5;
         glue.timeScale = timeScale;
 
         if (_selfGlue == Config.NEIGHBOR_TYPE.RIGHT)
@@ -486,29 +479,28 @@ public class GlueTile : ItemTile
         moveToSlot_Sequence = DOTween.Sequence();
 
 
-        moveToSlot_Sequence.Insert(0f, OTransform.DOScale(Vector3.one * 1.1f, 0.1f).SetEase(Ease.OutQuad));
-        moveToSlot_Sequence.Insert(0.1f, OTransform.DOScale(Vector3.one * 0.78f, 0.5f).SetEase(Ease.InQuad));
+        //moveToSlot_Sequence.Insert(0f, OTransform.DOScale(Vector3.one * 1.1f, 0.1f).SetEase(Ease.OutQuad));
+        moveToSlot_Sequence.Insert(0.05f, OTransform.DOScale(Vector3.one * 0.78f, 0.05f).SetEase(Ease.InQuad));
 
         moveToSlot_Sequence.InsertCallback(0.1f, () => { SoundManager.Instance.PlaySound_Wind(); });
 
-        moveToSlot_Sequence.Insert(0.1f, TTransform.DOLocalMoveX(0, 0.5f).SetEase(Ease.OutCubic));
-        moveToSlot_Sequence.Insert(0.1f, TTransform.DOLocalMoveY(0, 0.5f).SetEase(Ease.InCubic));
+        moveToSlot_Sequence.Insert(0f, TTransform.DOLocalMoveX(0, 0.3f).SetEase(Ease.OutCubic));
+        moveToSlot_Sequence.Insert(0f, TTransform.DOLocalMoveY(0, 0.3f).SetEase(Ease.InCubic));
 
         moveToSlot_Sequence.OnComplete(() =>
         {
-            HideGlue();
+            ItemTileState = Config.ITEMTILE_STATE.SLOT;
             if (itemDual != null)
                 itemDual.HideGlue();
+            
             if (OTransform != null)
                 OTransform.DOLocalMove(Vector2.zero, 0f);
 
             if (IsTileTutorial)
                 IsTileTutorial = false;
+            
             SetLayer_Move();
-
-            ItemTileState = Config.ITEMTILE_STATE.SLOT;
             SoundManager.Instance.PlaySound_BlockMoveFinish();
-
             GameLevelManager.Instance.SetMoveItemSlot_Finished(_checkMatch);
         });
     }

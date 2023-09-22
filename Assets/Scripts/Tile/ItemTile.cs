@@ -354,20 +354,18 @@ public class ItemTile : MonoBehaviour
 
         moveToSlot_Sequence = DOTween.Sequence();
 
-
-        moveToSlot_Sequence.Insert(0f, OTransform.DOScale(Vector3.one * 1.1f, 0.1f).SetEase(Ease.OutQuad));
+        // moveToSlot_Sequence.Insert(0f, OTransform.DOScale(Vector3.one * 1.1f, 0.1f).SetEase(Ease.OutQuad));
         moveToSlot_Sequence.Insert(0.1f, OTransform.DOScale(Vector3.one * 0.78f, 0.2f).SetEase(Ease.InQuad));
 
         moveToSlot_Sequence.InsertCallback(0.1f, () => { SoundManager.Instance.PlaySound_Wind(); });
 
-        moveToSlot_Sequence.Insert(0f, TTransform.DOLocalMoveX(0, 0.35f).SetEase(Ease.OutCubic));
-        moveToSlot_Sequence.Insert(0f, TTransform.DOLocalMoveY(0, 0.35f).SetEase(Ease.InCubic));
+        moveToSlot_Sequence.Insert(0f, TTransform.DOLocalMoveX(0, 0.4f).SetEase(Ease.OutCubic));
+        moveToSlot_Sequence.Insert(0f, TTransform.DOLocalMoveY(0, 0.4f).SetEase(Ease.InCubic));
 
         moveToSlot_Sequence.OnComplete(() =>
         {
             OTransform.DOLocalMove(Vector2.zero, 0f);
             ItemTileState = Config.ITEMTILE_STATE.SLOT;
-
             IsTileTutorial = false;
             SetLayer_Move();
 

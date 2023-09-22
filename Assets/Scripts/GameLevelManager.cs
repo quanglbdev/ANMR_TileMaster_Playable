@@ -452,6 +452,8 @@ public class GameLevelManager : MonoBehaviour
 
     private void RemoveTileToMap(ItemTile tile)
     {
+        if (_tilesCheck.Contains(tile))
+            _tilesCheck.Remove(tile);
         if (!itemsTileMap.ContainsKey(tile.floorIndex)) return;
         if (itemsTileMap[tile.floorIndex].Contains(tile))
             itemsTileMap[tile.floorIndex].Remove(tile);
@@ -507,7 +509,7 @@ public class GameLevelManager : MonoBehaviour
 
     private int _glueCount;
 
-    public void AddItemSlot(ItemTile itemTile, float delay = 0)
+    public void AddItemSlot(ItemTile itemTile)
     {
         if (listItemSlots.Count < Slot || itemTile.GetComponent<GlueTile>() != null)
         {
@@ -530,25 +532,10 @@ public class GameLevelManager : MonoBehaviour
             itemTile.transform.parent = tileSlotTransform;
             itemTileSlot.SetItemTile(itemTile);
             var checkMatch = true;
-            // if (itemTile.GetComponent<GlueTile>() != null && itemTile.GetComponent<GlueTile>().itemDual != null)
-            // {
-            //     _glueCount++;
-            // }
-            // Debug.Log("_glueCount " + _glueCount);
-            // if (_glueCount % 2 == 1) checkMatch = false;
-            // else
-            // {
-            //     _glueCount = 0;
-            // }
-            DOVirtual.DelayedCall(delay, () =>
-            {
-                if (itemTile.GetComponent<GlueTile>())
-                    itemTile.GetComponent<GlueTile>().SetMoveToSlot(indexNewSlot);
-                else itemTile.SetMoveToSlot(indexNewSlot);
-
-                //Find indexAdd newItemSlot
-                StartCoroutine(SetListItemSlot_ResetPosition_Now());
-            });
+            if (itemTile.GetComponent<GlueTile>())
+                itemTile.GetComponent<GlueTile>().SetMoveToSlot(indexNewSlot);
+            else itemTile.SetMoveToSlot(indexNewSlot);
+            StartCoroutine(SlotResetPosition_Move());
         }
     }
 
@@ -574,7 +561,7 @@ public class GameLevelManager : MonoBehaviour
 
             //Find indexAdd newItemSlot
             listItemSlots.Insert(indexNewSlot, itemTileSlot);
-            StartCoroutine(SetListItemSlot_ResetPosition_Now());
+            StartCoroutine(SlotResetPosition_Move());
         }
     }
 
@@ -656,7 +643,7 @@ public class GameLevelManager : MonoBehaviour
     private IEnumerator CheckGameOver_IEnumerator()
     {
         if (!IsItemTileMoveToSlot()) SoundManager.Instance.PlaySound_NoMoreMove();
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(1f);
         if (CheckGameOver())
         {
             SetGameOver();
@@ -666,7 +653,7 @@ public class GameLevelManager : MonoBehaviour
     private IEnumerator SetListItemSlot_ResetPosition()
     {
         //0.3 la thoi gian itemTile Efx Destroy
-        yield return new WaitForSeconds(0.6f);
+        yield return new WaitForSeconds(0.3f);
         for (int i = 0; i < listItemSlots.Count; i++)
         {
             if (listItemSlots[i] != null)
@@ -677,16 +664,16 @@ public class GameLevelManager : MonoBehaviour
         GamePlayManager.Instance.SetStatusUndoButton(listCheckUndo_ItemTileSlots.Count == 0);
     }
 
-    private IEnumerator SetListItemSlot_ResetPosition_Now()
+    private IEnumerator SlotResetPosition_Move(float delay = 0.01f)
     {
-        yield return new WaitForSeconds(0.01f);
+        yield return new WaitForSeconds(delay);
         for (int i = 0; i < listItemSlots.Count; i++)
         {
             if (listItemSlots[i] == null) yield break;
             listItemSlots[i].ResetPosSlot(i);
         }
 
-        yield return new WaitForSeconds(0.19f);
+        yield return new WaitForSeconds(0.2f);
         GamePlayManager.Instance.UpdateTileReturnStatus(!CheckTileReturnAvailable());
         GamePlayManager.Instance.SetStatusUndoButton(listCheckUndo_ItemTileSlots.Count == 0);
     }
@@ -718,6 +705,7 @@ public class GameLevelManager : MonoBehaviour
         foreach (var slot in listItemSlots)
         {
             var slotData = slot.itemTile.itemData.itemType;
+            if (slot.itemTile.ItemTileState != Config.ITEMTILE_STATE.SLOT) continue;
             if (!slotDataDict.ContainsKey(slotData))
             {
                 slotDataDict[slotData] = new List<ItemTileSlot>();
@@ -814,45 +802,8 @@ public class GameLevelManager : MonoBehaviour
 
     private bool CheckGameOver()
     {
-        var listCheckMatch3Slots = FindMatch3_ItemTiles_Slots();
-        var match = false;
-        foreach (var listCheck in listCheckMatch3Slots)
-        {
-            if (listCheck.Count >= 3)
-            {
-                match = true;
-                SoundManager.Instance.PlaySound_ComboMatch(starGroup.CurrentCombo);
-
-                var isClear = listItemSlots.Count == 3;
-                for (var i = 0; i < 3; i++)
-                {
-                    if (listCheck[i] != null)
-                    {
-                        listItemSlots.Remove(listCheck[i]);
-                        //Undo
-                        listCheckUndo_ItemTileSlots.Remove(listCheck[i]);
-                        listCheck[i].SetItemSlot_Match3(i, isClear);
-                        GamePlayManager.Instance.SetStatusUndoButton(listCheckUndo_ItemTileSlots.Count == 0);
-                    }
-
-                    if (i == 1)
-                    {
-                        UpdateScore(BASE_SCORE_MATCH);
-                    }
-                }
-
-                StartCoroutine(SetListItemSlot_ResetPosition());
-                StartCoroutine(CheckGameWin());
-                SoundManager.Instance.PlaySound_FreeBlock();
-            }
-        }
-
-        if (listItemSlots.Count < Slot)
-        {
-            return false;
-        }
-
-        return !match;
+        var count = listItemSlots.Count(slot => slot.itemTile.ItemTileState == Config.ITEMTILE_STATE.SLOT);
+        return count >= Slot;
     }
 
     public bool IsItemTileMoveToSlot()
@@ -971,7 +922,7 @@ public class GameLevelManager : MonoBehaviour
                 listCheckUndo_ItemTileSlots.Remove(glueDualSlot);
                 listItemSlots.Remove(glueDualSlot);
                 Destroy(glueDualSlot.gameObject);
-                StartCoroutine(SetListItemSlot_ResetPosition_Now());
+                StartCoroutine(SlotResetPosition_Move());
 
                 return true;
             }
@@ -983,7 +934,7 @@ public class GameLevelManager : MonoBehaviour
             listItemSlots.Remove(itemTileSlotUndo);
             Destroy(itemTileSlotUndo.gameObject);
 
-            StartCoroutine(SetListItemSlot_ResetPosition_Now());
+            StartCoroutine(SlotResetPosition_Move());
 
             return true;
         }
@@ -1002,6 +953,15 @@ public class GameLevelManager : MonoBehaviour
             listCheckUndo_ItemTileSlots.Remove(itemTileSlot_Undo);
             listItemSlots.Remove(itemTileSlot_Undo);
             Destroy(itemTileSlot_Undo.gameObject);
+        }
+        
+        foreach (var tile in _tilesCheck)
+        {
+            if(tile == null) continue;
+            if (tile.GetComponent<BombTile>() != null)
+            {
+                tile.GetComponent<BombTile>()?.ReviveBombTile();
+            }
         }
     }
 
@@ -1061,7 +1021,7 @@ public class GameLevelManager : MonoBehaviour
             listCheckUndo_ItemTileSlots.Remove(itemTileSlotTileReturn);
             listItemSlots.Remove(itemTileSlotTileReturn);
             Destroy(itemTileSlotTileReturn.gameObject);
-            StartCoroutine(SetListItemSlot_ResetPosition_Now());
+            StartCoroutine(SlotResetPosition_Move());
         }
 
         _floorTileReturn++;

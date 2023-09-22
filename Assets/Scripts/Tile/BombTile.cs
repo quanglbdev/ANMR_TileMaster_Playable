@@ -246,4 +246,10 @@ public class BombTile : ItemTile
         border.sortingLayerName = sortingLayerName;
         canvas.sortingLayerName = sortingLayerName;
     }
+    public void ReviveBombTile()
+    {
+        breakTileSkeleton.gameObject.SetActive(false);
+        bg.gameObject.SetActive(true);
+        icon.transform.localScale = Vector3.one;
+    }
 }
