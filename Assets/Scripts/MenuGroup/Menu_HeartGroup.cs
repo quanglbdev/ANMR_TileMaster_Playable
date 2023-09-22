@@ -50,7 +50,7 @@ public class Menu_HeartGroup : MonoBehaviour
         txtCountdownHeart.gameObject.SetActive(false);
 
         txtHeart.gameObject.SetActive(true);
-        txtHeart2.text = $"{Config.currHeart}";
+        //txtHeart2.text = $"{Config.currHeart}";
 
         addBtn.SetActive(Config.currHeart < Config.MAX_HEART);
         if (Config.currHeart >= Config.MAX_HEART)

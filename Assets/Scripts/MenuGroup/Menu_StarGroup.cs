@@ -25,7 +25,7 @@ public class Menu_StarGroup : MonoBehaviour
     private void ShowStar() {
         DOTween.Kill(txtStar.transform);
         
-        txtStar.text = $"{Config.currStar}";
+        //txtStar.text = $"{Config.currStar}";
         txtStar.transform.localScale = Vector3.one;
         txtStar.transform.DOPunchScale(Vector3.one * 0.3f, 0.2f, 10, 2f).SetEase(Ease.InOutBack).SetRelative(true).SetLoops(3,LoopType.Restart);
     }
