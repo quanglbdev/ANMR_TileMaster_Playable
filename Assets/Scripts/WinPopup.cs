@@ -11,11 +11,9 @@ using UnityEngine.Events;
 
 public class WinPopup : MonoBehaviour
 {
-    public static WinPopup Instance;
     [Header("Button")] public Button btnReward, btnNext;
 
     [Header("Popup")] public GameObject popup;
-    public TextMeshProUGUI txtRewardCoin;
     public GameObject lockGroup;
     public Image bgPopup;
 
@@ -42,12 +40,6 @@ public class WinPopup : MonoBehaviour
     [Header("UIParticle")] [SerializeField]
     private UIParticle processFX;
 
-
-    private void Awake()
-    {
-        Instance = this;
-    }
-
     private void Start()
     {
         btnReward.onClick.AddListener(TouchXReward);
@@ -66,7 +58,10 @@ public class WinPopup : MonoBehaviour
             lockGroup.gameObject.SetActive(true);
             popup.GetComponent<BBUIView>().HideView();
         });
-        sequenceHideView.OnComplete(() => { GamePlayManager.Instance.SetLoadGame(Random.Range(1, 31)); });
+        sequenceHideView.OnComplete(() =>
+        {
+            GamePlayManager.Instance.HideView();
+        });
     }
 
     private void HidePopup_Finished()

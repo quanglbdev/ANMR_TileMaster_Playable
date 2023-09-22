@@ -10,6 +10,7 @@ public class GamePlayManager : MonoBehaviour
 {
     public static GamePlayManager Instance;
     public Canvas canvas;
+    public Canvas canvasStart;
     [Header("Select Level")] public int level = 1;
 
     [Header("Button PAUSE")] public BBUIButton btnPause;
@@ -120,6 +121,7 @@ public class GamePlayManager : MonoBehaviour
         if (Instance == null)
             Instance = this;
         HideElementUI();
+        EnableCanvas();
     }
 
     private void StartGame(int levelSet = -100)
@@ -182,7 +184,7 @@ public class GamePlayManager : MonoBehaviour
         levelGame.InitSlotPosition(slotBGTranform.position);
     }
 
-    private void HideElementUI()
+    public void HideElementUI()
     {
         Config.gameState = Config.GAME_STATE.PAUSE;
         canvas.enabled = false;
@@ -195,6 +197,11 @@ public class GamePlayManager : MonoBehaviour
 
         levelGame.score.gameObject.SetActive(false);
         comboProcess.SetActive(false);
+    }
+
+    public void EnableCanvas()
+    {
+        canvasStart.enabled = true;
     }
 
     private void InitViews()
@@ -290,7 +297,7 @@ public class GamePlayManager : MonoBehaviour
         });
 
         sequenceShowView.InsertCallback(0.5f, () => { boosterGroup.GetComponent<BBUIView>().HideView(); });
-        sequenceShowView.InsertCallback(0.6f, () =>
+        sequenceShowView.OnComplete(() =>
         {
             HideView_Finished(hideCanvas);
             Config.gameState = Config.GAME_STATE.END;
@@ -306,7 +313,7 @@ public class GamePlayManager : MonoBehaviour
 
     public void HideViewWhenWinGame()
     {
-        //canvas.enabled = false;
+        EnableCanvas();
     }
 
     private void InitViews_ShowView_Finished()

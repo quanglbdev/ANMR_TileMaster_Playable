@@ -831,7 +831,7 @@ public class Config
 
     #region CURR_LEVEL
 
-    public const int MAX_LEVEL = 100;
+    public const int MAX_LEVEL = 20;
     public static int currSelectLevel = 1;
     public const string CURR_LEVEL = "CURR_LEVEL";
 
@@ -940,6 +940,7 @@ public class Config
     }
 
     private static string USER_ID_KEY = "user_ID";
+    public static bool isHackMode;
 
     public static string USER_ID
     {

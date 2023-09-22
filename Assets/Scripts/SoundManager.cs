@@ -194,47 +194,6 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    [Header("Spin")]
-    public AudioClip spin;
-    public void PlaySound_Spin()
-    {
-        if (Config.isSound)
-        {
-            _audioSound.PlayOneShot(spin);
-        }
-    }
-    
-    [Header("Building")]
-    public AudioClip building;
-    public void PlaySound_Building()
-    {
-        if (Config.isSound)
-        {
-            _audioSound.PlayOneShot(building);
-        }
-    }
-    
-    [Header("Building Completed")]
-    public AudioClip buildingCompleted;
-    public void PlaySound_BuildingCompleted()
-    {
-        if (Config.isSound)
-        {
-            _audioSound.PlayOneShot(buildingCompleted);
-        }
-    }
-    
-      
-    [Header("Map Completed")]
-    public AudioClip mapCompleted;
-    public void PlaySound_MapCompleted()
-    {
-        if (Config.isSound)
-        {
-            _audioSound.PlayOneShot(mapCompleted);
-        }
-    }
-    
     [Header("Get Star")]
     public AudioClip getStar;
     public void PlaySound_GetStar()

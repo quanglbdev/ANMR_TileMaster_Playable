@@ -12,8 +12,18 @@ public class Manager : MonoBehaviour
 
     private void TouchPlay()
     {
-        canvas.enabled = false;
-        GamePlayManager.Instance.SetLoadGame(44);
+        LevelPopup.instance.ShowLevelPopup();
+        //GamePlayManager.Instance.SetLoadGame(1);
         //GamePlayManager.Instance.SetLoadGame(Random.Range(13, 31));
+    }
+
+    public void DisableCanvas()
+    {
+        canvas.enabled = false;
+    }
+    
+    public void SelectLevel(int level)
+    {
+        GamePlayManager.Instance.SetLoadGame(level);
     }
 }
