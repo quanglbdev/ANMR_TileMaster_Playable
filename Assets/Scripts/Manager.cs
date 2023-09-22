@@ -13,8 +13,6 @@ public class Manager : MonoBehaviour
     private void TouchPlay()
     {
         LevelPopup.instance.ShowLevelPopup();
-        //GamePlayManager.Instance.SetLoadGame(1);
-        //GamePlayManager.Instance.SetLoadGame(Random.Range(13, 31));
     }
 
     public void DisableCanvas()

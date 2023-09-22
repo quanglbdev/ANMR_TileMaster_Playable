@@ -178,7 +178,7 @@ public class SettingsPopup : MonoBehaviour
                 GamePlayManager.Instance.SetUnPause();
                 break;
             case STATE_CLOSEPOPUP.RESTART:
-                GamePlayManager.Instance.SetLoadGame();
+                GamePlayManager.Instance.SetLoadGame(GamePlayManager.Instance.level);
                 break;
             case STATE_CLOSEPOPUP.HOME:
                 GamePlayManager.Instance.HideView();

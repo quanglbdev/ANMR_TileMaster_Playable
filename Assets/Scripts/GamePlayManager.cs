@@ -530,9 +530,9 @@ public class GamePlayManager : MonoBehaviour
         }
     }
 
-    public void SetReplayGame()
+    public void SetReplayGame(int levelLoad)
     {
-        SetLoadGame();
+        SetLoadGame(levelLoad);
     }
 
     #endregion
@@ -729,9 +729,9 @@ public class GamePlayManager : MonoBehaviour
 
     [Header("TRY AGAIN")] public TryAgainPopup tryAgainPopup;
 
-    public void OpenTryAgainPopup()
+    public void OpenTryAgainPopup(int levelTry)
     {
-        tryAgainPopup.ShowTryAgainPopup(Config.currSelectLevel);
+        tryAgainPopup.ShowTryAgainPopup(levelTry);
     }
 
     #endregion

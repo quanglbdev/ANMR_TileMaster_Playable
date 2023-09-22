@@ -56,12 +56,14 @@ public class LosePopup : MonoBehaviour
 
     private void TouchGiveUp()
     {
-        GamePlayManager.Instance.OpenTryAgainPopup();
+        GamePlayManager.Instance.OpenTryAgainPopup(level);
         HidePopup_Finished();
     }
 
+    private int level;
     public void ShowLosePopup(int _level, bool _isRevive)
     {
+        level = _level;
         SoundManager.Instance.PlaySound_GameOver();
 
         gameObject.SetActive(true);

@@ -58,14 +58,16 @@ public class TimeUpPopup : MonoBehaviour
 
     private void TouchGiveUp()
     {
-        GamePlayManager.Instance.OpenTryAgainPopup();
+        GamePlayManager.Instance.OpenTryAgainPopup(_level);
         HidePopup_Finished();
     }
 
     private int _timeAdd;
+    private int _level;
 
     public void ShowTimeUpPopup(int level)
     {
+        _level = level;
         _timeAdd = GameLevelManager.Instance.secondsRequired / 3;
         timeAddCoinTxt.text = $"+{_timeAdd}s";
         timeAddAdsTxt.text = $"+{_timeAdd}s";

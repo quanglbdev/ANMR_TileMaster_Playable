@@ -32,7 +32,7 @@ public class TryAgainPopup : MonoBehaviour
         _hideState = HideState.Replay;
         popup.GetComponent<BBUIView>().HideView();
         Config.currSelectLevel = _level;
-        GamePlayManager.Instance.SetReplayGame();
+        GamePlayManager.Instance.SetReplayGame(_level);
     }
 
     private void TouchClose()
