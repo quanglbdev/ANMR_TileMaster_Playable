@@ -137,6 +137,7 @@ public class GamePlayManager : MonoBehaviour
         btnSuggest.OnPointerClickCallBack_Start.RemoveAllListeners();
         btnShuffle.OnPointerClickCallBack_Start.RemoveAllListeners();
         btnHideUI.OnPointerClickCallBack_Start.RemoveAllListeners();
+        btnOutGame.OnPointerClickCallBack_Start.RemoveAllListeners();
 
         btnHideUI.OnPointerClickCallBack_Start.AddListener(TouchHideUI);
         btnUndo.OnPointerClickCallBack_Start.AddListener(TouchUndo);
@@ -144,6 +145,8 @@ public class GamePlayManager : MonoBehaviour
         btnShuffle.OnPointerClickCallBack_Start.AddListener(TouchShuffle);
         btnTileReturn.OnPointerClickCallBack_Start.AddListener(TouchTileReturn);
         btnExtraSlot.OnPointerClickCallBack_Start.AddListener(TouchExtraSlot);
+        
+        btnOutGame.OnPointerClickCallBack_Start.AddListener(TouchSelectLevel);
 
         level = levelSet;
         
@@ -197,6 +200,17 @@ public class GamePlayManager : MonoBehaviour
 
         levelGame.score.gameObject.SetActive(false);
         comboProcess.SetActive(false);
+    }
+
+    private void TouchSelectLevel()
+    {
+        if (Config.gameState == Config.GAME_STATE.PLAYING)
+        {
+            Config.gameState = Config.GAME_STATE.PAUSE;
+            SortingLayerCanvasUI();
+            canvasStart.enabled =  true;
+            LevelPopup.instance.ShowLevelPopup();
+        }
     }
 
     public void EnableCanvas()
@@ -314,6 +328,7 @@ public class GamePlayManager : MonoBehaviour
     public void HideViewWhenWinGame()
     {
         EnableCanvas();
+        LevelPopup.instance.ShowLevelPopup();
     }
 
     private void InitViews_ShowView_Finished()

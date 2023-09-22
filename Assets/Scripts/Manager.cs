@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Manager : MonoBehaviour
 {
-    [SerializeField] private BBUIButton btnPlay;
-    [SerializeField] private Canvas canvas;
+    public BBUIButton btnPlay;
+    public Canvas canvas;
 
     private void Start()
     {
@@ -13,6 +13,7 @@ public class Manager : MonoBehaviour
     private void TouchPlay()
     {
         LevelPopup.instance.ShowLevelPopup();
+        btnPlay.gameObject.SetActive(false);
     }
 
     public void DisableCanvas()

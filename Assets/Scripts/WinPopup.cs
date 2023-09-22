@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Coffee.UIExtensions;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
@@ -42,7 +41,7 @@ public class WinPopup : MonoBehaviour
 
     private void Start()
     {
-        btnReward.onClick.AddListener(TouchXReward);
+        //btnReward.onClick.AddListener(TouchXReward);
         btnNext.onClick.AddListener(() => { TouchNext(); });
 
         popup.GetComponent<BBUIView>().HideBehavior.onCallback_Completed.AddListener(HidePopup_Finished);

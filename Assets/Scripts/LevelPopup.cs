@@ -51,11 +51,6 @@ public class LevelPopup : MonoBehaviour
         popup.GetComponent<BBUIView>().HideView();
     }
 
-    public void Hide()
-    {
-        gameObject.SetActive(false);
-    }
-
     private InfoLevel infoLevelSelect;
 
     public void SelectLevel(InfoLevel infoLevel)
@@ -74,16 +69,26 @@ public class LevelPopup : MonoBehaviour
 
             manager.DisableCanvas();
             manager.SelectLevel(infoLevelSelect.level);
+            gameObject.SetActive(false);
+            return;
         }
 
+        if (GamePlayManager.Instance.canvas.enabled)
+        {
+            manager.DisableCanvas();
+            gameObject.SetActive(false);
+            Config.gameState = Config.GAME_STATE.PLAYING;
+        }
+        else
+        {
+            manager.btnPlay.gameObject.SetActive(true);
+        }
         gameObject.SetActive(false);
     }
 
 
-    //bool isShowView = false;
     private void InitViews()
     {
-        //isShowView = true;
         lockGroup.gameObject.SetActive(false);
         popup.gameObject.SetActive(false);
         btnClose.gameObject.SetActive(false);
