@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using DG.Tweening;
@@ -608,7 +607,7 @@ public class GameLevelManager : MonoBehaviour
         var listCheckMatch3Slots = FindMatch3_ItemTiles_Slots();
         foreach (var listCheck in listCheckMatch3Slots)
         {
-            if (listCheck.Count == 3)
+            if (listCheck.Count >= 3)
             {
                 SoundManager.Instance.PlaySound_ComboMatch(starGroup.CurrentCombo);
 
@@ -695,26 +694,26 @@ public class GameLevelManager : MonoBehaviour
         return listCheckMatch3ItemTileSlot;
     }
 
-    private Dictionary<Config.ITEM_TYPE, List<ItemTileSlot>> _slotDataDict;
+    private Dictionary<Config.ITEM_TYPE, List<ItemTileSlot>> _slotDataDict = new();
 
     private List<List<ItemTileSlot>> FindMatch3_ItemTiles_Slots()
     {
         var listCheckMatch3ItemTileSlot = new List<List<ItemTileSlot>>();
-        var slotDataDict = new Dictionary<Config.ITEM_TYPE, List<ItemTileSlot>>();
+        _slotDataDict.Clear();
 
         foreach (var slot in listItemSlots)
         {
             var slotData = slot.itemTile.itemData.itemType;
             if (slot.itemTile.ItemTileState != Config.ITEMTILE_STATE.SLOT) continue;
-            if (!slotDataDict.ContainsKey(slotData))
+            if (!_slotDataDict.ContainsKey(slotData))
             {
-                slotDataDict[slotData] = new List<ItemTileSlot>();
+                _slotDataDict[slotData] = new List<ItemTileSlot>();
             }
 
-            slotDataDict[slotData].Add(slot);
+            _slotDataDict[slotData].Add(slot);
         }
 
-        foreach (var kvp in slotDataDict)
+        foreach (var kvp in _slotDataDict)
         {
             if (kvp.Value.Count >= 3)
             {
@@ -802,6 +801,12 @@ public class GameLevelManager : MonoBehaviour
 
     private bool CheckGameOver()
     {
+        var listCheckMatch3Slots = FindMatch3_ItemTiles_Slots();
+        if (listCheckMatch3Slots.Any(listCheck => listCheck.Count >= 3))
+        {
+            return false;
+        }
+
         var count = listItemSlots.Count(slot => slot.itemTile.ItemTileState == Config.ITEMTILE_STATE.SLOT);
         return count >= Slot;
     }

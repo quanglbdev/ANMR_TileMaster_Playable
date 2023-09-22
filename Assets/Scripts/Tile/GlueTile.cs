@@ -487,9 +487,12 @@ public class GlueTile : ItemTile
         moveToSlot_Sequence.Insert(0f, TTransform.DOLocalMoveX(0, 0.3f).SetEase(Ease.OutCubic));
         moveToSlot_Sequence.Insert(0f, TTransform.DOLocalMoveY(0, 0.3f).SetEase(Ease.InCubic));
 
-        moveToSlot_Sequence.OnComplete(() =>
+        moveToSlot_Sequence.InsertCallback(0.2f, () =>
         {
             ItemTileState = Config.ITEMTILE_STATE.SLOT;
+        });
+        moveToSlot_Sequence.OnComplete(() =>
+        {
             if (itemDual != null)
                 itemDual.HideGlue();
             
@@ -501,7 +504,7 @@ public class GlueTile : ItemTile
             
             SetLayer_Move();
             SoundManager.Instance.PlaySound_BlockMoveFinish();
-            GameLevelManager.Instance.SetMoveItemSlot_Finished(_checkMatch);
+            GameLevelManager.Instance.SetMoveItemSlot_Finished();
         });
     }
 
